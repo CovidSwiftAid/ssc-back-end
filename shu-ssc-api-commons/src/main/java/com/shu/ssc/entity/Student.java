@@ -1,0 +1,63 @@
+package com.shu.ssc.entity;
+
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.shu.ssc.utils.DateUtil;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+//@Table(name = "students", uniqueConstraints = @UniqueConstraint(columnNames = "phone_id"))
+public class Student {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "user_id")
+//    private Integer userId;
+//
+//    @Column(name = "nickname")
+//    private String nickName;
+//
+//    @Column(name = "phone_id", nullable = false, unique = true)
+//    @JsonIgnore
+    private String phoneId;
+//
+//    @Column
+//    private String sex;
+//
+//    @Column
+//    private String school;
+//
+//    @Column(name = "major_id")
+//    private Integer majorId;
+//
+//    @Column
+//    private String grade;
+//
+//    @Column
+//    @JsonIgnore
+    private String password;
+//
+//    @Column(name = "vip_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private Timestamp vipDate = DateUtil.stringToTimestamp("2000-01-01 00:00:00");
+//
+//    @Column(name = "student_pic_url")
+//    private String studentPicUrl;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "major_id", referencedColumnName = "major_id", insertable = false, updatable = false)
+//    Major major;
+//
+    public String getVipDate() {
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(vipDate);
+    }
+}
+
+

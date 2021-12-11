@@ -1,0 +1,5 @@
+# Project exclude paths
+/shu-ssc-api-commons/target/
+/shu-ssc-auth-center/target/
+/shu-ssc-gateway/target/
+/shu-ssc-student-api/target/
