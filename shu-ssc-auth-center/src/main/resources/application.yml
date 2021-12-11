@@ -11,11 +11,11 @@ spring:
         server-addr: 127.0.0.1:8848
         namespace: 49c0c7f8-ee2c-4186-8634-7160f6b3baaf
 
-        config:
-          namespace: 49c0c7f8-ee2c-4186-8634-7160f6b3baaf
-          group: PROVIDER_GROUP
-          server-addr: 127.0.0.1:8848
-          file-extension: yaml
+      config:
+        namespace: 49c0c7f8-ee2c-4186-8634-7160f6b3baaf
+        group: PROVIDER_GROUP
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
 
     sentinel:
       transport:
