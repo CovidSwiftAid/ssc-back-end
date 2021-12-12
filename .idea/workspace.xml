@@ -22,7 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77651a36-3c7d-49a3-b3c0-04c475b3ed40" name="Default Changelist" comment="config" />
+    <list default="true" id="77651a36-3c7d-49a3-b3c0-04c475b3ed40" name="Default Changelist" comment="config">
+      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/shu-ssc-auth-center-20000.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-auth-center/shu-ssc-auth-center.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/controller/LoginController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,9 +52,23 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.25316453" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -64,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639273351956</updated>
-      <workItem from="1639273353278" duration="1345000" />
+      <workItem from="1639273353278" duration="3553000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <created>1639273481315</created>
@@ -95,13 +112,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="config" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="407" y="59" key="SettingsEditor" timestamp="1639273368485">
+    <state x="333" y="59" key="#Project_Structure" timestamp="1639276718816">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
-    <state x="407" y="59" key="SettingsEditor/0.25.1680.949@0.25.1680.949" timestamp="1639273368485" />
-    <state x="519" y="218" key="Vcs.Push.Dialog.v2" timestamp="1639274890579">
+    <state x="333" y="59" key="#Project_Structure/0.25.1680.949@0.25.1680.949" timestamp="1639276718816" />
+    <state x="407" y="59" key="SettingsEditor" timestamp="1639276295755">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
-    <state x="519" y="218" key="Vcs.Push.Dialog.v2/0.25.1680.949@0.25.1680.949" timestamp="1639274890579" />
+    <state x="407" y="59" key="SettingsEditor/0.25.1680.949@0.25.1680.949" timestamp="1639276295755" />
+    <state x="519" y="218" key="Vcs.Push.Dialog.v2" timestamp="1639275867954">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state x="519" y="218" key="Vcs.Push.Dialog.v2/0.25.1680.949@0.25.1680.949" timestamp="1639275867954" />
   </component>
 </project>

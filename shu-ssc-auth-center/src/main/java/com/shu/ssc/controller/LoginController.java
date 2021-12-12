@@ -1,5 +1,6 @@
 package com.shu.ssc.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shu.ssc.common.result.Result;
 import com.shu.ssc.common.result.ResultCode;
@@ -48,6 +49,7 @@ public class LoginController {
     @PostMapping("/student/byPassword")
     @ApiOperation(value = "登录")
     @ResponseBody
+    @SentinelResource
     public Result loginByPassword(@RequestBody LoginDto loginDto, HttpServletResponse response) throws NotFoundException, ParamErrorException {
         LoginDto dto = new LoginDto(loginDto.getPhone(), loginDto.getPassword());
         // 通过studentSerivice远程调用student-api模块下的loginByPassword

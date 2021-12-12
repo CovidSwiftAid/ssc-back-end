@@ -7,14 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="shu-ssc-gateway" />
-        <module name="shu-ssc-auth-center-20000" />
         <module name="shu-ssc-api-commons" />
         <module name="shu-ssc-student-api" />
+        <module name="shu-ssc-auth-center" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="shu-ssc-api-commons" target="1.8" />
-      <module name="shu-ssc-auth-center-20000" target="1.8" />
+      <module name="shu-ssc-auth-center" target="1.8" />
       <module name="shu-ssc-gateway" target="1.8" />
       <module name="shu-ssc-student-api" target="1.8" />
       <module name="student-service-center-back-end" target="1.8" />
