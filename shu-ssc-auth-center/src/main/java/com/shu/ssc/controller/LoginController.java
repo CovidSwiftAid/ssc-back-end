@@ -16,6 +16,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -40,13 +41,14 @@ public class LoginController {
     @Value("${ssc-auth-center.jwt.secret}")
     String secret;
 
+    @PreAuthorize("hasAnyAuthority('ROLE_STUDENT')")
     @GetMapping("/test")
     @SentinelResource
     public String test() {
         return "hello" + secret;
     }
 
-//    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+
     @PostMapping("/student/byPassword")
     @ApiOperation(value = "登录")
     @ResponseBody

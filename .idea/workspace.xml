@@ -23,7 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77651a36-3c7d-49a3-b3c0-04c475b3ed40" name="Default Changelist" comment="config">
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/shu-ssc-auth-center-20000.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-auth-center/shu-ssc-auth-center.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/controller/LoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639273351956</updated>
-      <workItem from="1639273353278" duration="3553000" />
+      <workItem from="1639273353278" duration="5624000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <created>1639273481315</created>
