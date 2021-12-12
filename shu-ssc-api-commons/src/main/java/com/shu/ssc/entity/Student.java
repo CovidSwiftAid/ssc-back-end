@@ -1,63 +1,109 @@
 package com.shu.ssc.entity;
 
+import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.shu.ssc.utils.DateUtil;
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-//@Table(name = "students", uniqueConstraints = @UniqueConstraint(columnNames = "phone_id"))
 public class Student {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "user_id")
-//    private Integer userId;
-//
-//    @Column(name = "nickname")
-//    private String nickName;
-//
-//    @Column(name = "phone_id", nullable = false, unique = true)
-//    @JsonIgnore
+    private Integer userId;
+
+    private String nickname;
+
     private String phoneId;
-//
-//    @Column
-//    private String sex;
-//
-//    @Column
-//    private String school;
-//
-//    @Column(name = "major_id")
-//    private Integer majorId;
-//
-//    @Column
-//    private String grade;
-//
-//    @Column
-//    @JsonIgnore
+
+    private String sex;
+
+    private String school;
+
+    private String grade;
+
     private String password;
-//
-//    @Column(name = "vip_date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private Timestamp vipDate = DateUtil.stringToTimestamp("2000-01-01 00:00:00");
-//
-//    @Column(name = "student_pic_url")
-//    private String studentPicUrl;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "major_id", referencedColumnName = "major_id", insertable = false, updatable = false)
-//    Major major;
-//
-    public String getVipDate() {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(vipDate);
+
+    private String studentPicUrl;
+
+    private Integer majorId;
+
+    private Date vipDate;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getPhoneId() {
+        return phoneId;
+    }
+
+    public void setPhoneId(String phoneId) {
+        this.phoneId = phoneId;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getStudentPicUrl() {
+        return studentPicUrl;
+    }
+
+    public void setStudentPicUrl(String studentPicUrl) {
+        this.studentPicUrl = studentPicUrl;
+    }
+
+    public Integer getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(Integer majorId) {
+        this.majorId = majorId;
+    }
+
+    public Date getVipDate() {
+        return vipDate;
+    }
+
+    public void setVipDate(Date vipDate) {
+        this.vipDate = vipDate;
     }
 }
-
-

@@ -26,7 +26,7 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <exclusions>
                 <exclusion>
-<!--                    ribbon包会导致loadbalancer包失效-->
+                    <!--                    ribbon包会导致loadbalancer包失效-->
                     <groupId>org.springframework.cloud</groupId>
                     <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
                 </exclusion>
@@ -96,7 +96,7 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
-<!--        spring-cloud 中使用@ConfigurationProperties-->
+        <!--        spring-cloud 中使用@ConfigurationProperties-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>

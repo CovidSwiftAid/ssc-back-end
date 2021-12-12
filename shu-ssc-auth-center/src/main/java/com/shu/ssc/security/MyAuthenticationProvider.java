@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class MyAuthenticationProvider implements AuthenticationProvider {
-//    @Autowired
+    @Autowired
     JwtUtil jwtUtil;
 
     @Override

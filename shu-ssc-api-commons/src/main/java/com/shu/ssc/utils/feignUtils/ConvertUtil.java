@@ -14,7 +14,8 @@ public class ConvertUtil {
 
     /**
      * 获取指定类对象
-     * @param result 远程调用结果
+     *
+     * @param result              远程调用结果
      * @param targetClassInstance 指定类对象实例
      * @return
      */

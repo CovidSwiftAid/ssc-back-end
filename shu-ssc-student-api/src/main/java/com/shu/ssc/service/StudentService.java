@@ -10,6 +10,7 @@ import com.shu.ssc.utils.exceptionUtils.ParamErrorException;
  * @description
  */
 public interface StudentService {
+    public Student loginByPassword(String phoneId, String password) throws ParamErrorException, NotFoundException;
 
-    Student loginByPassword(String phoneId, String password) throws ParamErrorException, NotFoundException;
+    public Student getOne(Integer id);
 }

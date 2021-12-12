@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shu.ssc.mapper.RelationshipStuPreferMapper">
+  <resultMap id="BaseResultMap" type="com.shu.ssc.entity.RelationshipStuPrefer">
+    <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <id column="prefer_id" jdbcType="INTEGER" property="preferId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from relationship_stu_prefer
+    where student_id = #{studentId,jdbcType=INTEGER}
+      and prefer_id = #{preferId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shu.ssc.entity.RelationshipStuPrefer">
+    insert into relationship_stu_prefer (student_id, prefer_id)
+    values (#{studentId,jdbcType=INTEGER}, #{preferId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shu.ssc.entity.RelationshipStuPrefer">
+    insert into relationship_stu_prefer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="preferId != null">
+        prefer_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="studentId != null">
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="preferId != null">
+        #{preferId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

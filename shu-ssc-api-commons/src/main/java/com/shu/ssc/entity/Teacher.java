@@ -1,51 +1,107 @@
 package com.shu.ssc.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-//@Entity
+import lombok.Data;
+
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-//@Table(name = "teachers", uniqueConstraints = @UniqueConstraint(columnNames = "phone_id"))
 public class Teacher {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "user_id")
-//    private Integer userId;
-//
-//    @Column
-//    private String name;
-//
-//    @Column(name = "phone_id", nullable = false)
-//    @JsonIgnore
+    private Integer userId;
+
+    private String name;
+
     private String phoneId;
-//
-//    @Column
-//    private String sex;
-//
-//    @Column
-//    private String school;
-//
-//    @Column(name = "major_id")
-//    private Integer majorId;
-//
-//    @Column
-//    private String intro;
-//
-//    @Column
-//    @JsonIgnore
+
     private String password;
-//
-//    @Column(name = "teacher_pic_url")
-//    private String teacherPicUrl;
-//
-//    @Column(name = "teacher_status")
-//    private Integer teacherStatus = 0;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "major_id", referencedColumnName = "major_id", updatable = false, insertable = false)
-//    Major major;
+
+    private String sex;
+
+    private String school;
+
+    private Integer majorId;
+
+    private String teacherPicUrl;
+
+    private Boolean teacherStatus;
+
+    private String intro;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhoneId() {
+        return phoneId;
+    }
+
+    public void setPhoneId(String phoneId) {
+        this.phoneId = phoneId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public Integer getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(Integer majorId) {
+        this.majorId = majorId;
+    }
+
+    public String getTeacherPicUrl() {
+        return teacherPicUrl;
+    }
+
+    public void setTeacherPicUrl(String teacherPicUrl) {
+        this.teacherPicUrl = teacherPicUrl;
+    }
+
+    public Boolean getTeacherStatus() {
+        return teacherStatus;
+    }
+
+    public void setTeacherStatus(Boolean teacherStatus) {
+        this.teacherStatus = teacherStatus;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
 }

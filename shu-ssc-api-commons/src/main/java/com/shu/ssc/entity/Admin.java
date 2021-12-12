@@ -1,19 +1,37 @@
 package com.shu.ssc.entity;
 
+
 import lombok.Data;
 
 @Data
-//@Entity
-//@Table(name = "admin")
 public class Admin {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "user_id")
     private Integer userId;
 
-//    @Column(name = "phone_id")
     private String phoneId;
 
-//    @Column(name = "password")
     private String password;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getPhoneId() {
+        return phoneId;
+    }
+
+    public void setPhoneId(String phoneId) {
+        this.phoneId = phoneId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

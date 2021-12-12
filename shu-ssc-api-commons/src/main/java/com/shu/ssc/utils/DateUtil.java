@@ -35,7 +35,7 @@ public class DateUtil {
         return new Timestamp(d.getTime());
     }
 
-    public static Timestamp stringToTimestamp(String s){
+    public static Timestamp stringToTimestamp(String s) {
         Date d = stringToDate(s);
         if (d == null) {
             return null;
@@ -60,7 +60,7 @@ public class DateUtil {
     /**
      * 获取当前时间
      */
-    public static Date getNowDate(){
+    public static Date getNowDate() {
         return Calendar.getInstance().getTime();
     }
 
@@ -69,7 +69,7 @@ public class DateUtil {
      */
     public static Date getDateAddYear(Date date, Integer n) throws ParamErrorException {
         Calendar cal = Calendar.getInstance();
-        if(date == null){
+        if (date == null) {
             throw new ParamErrorException(ResultCode.PARAM_IS_INVALID);
         }
         cal.setTime(date);
@@ -82,7 +82,7 @@ public class DateUtil {
      */
     public static Date getDateAddMonth(Date date, Integer n) throws ParamErrorException {
         Calendar cal = Calendar.getInstance();
-        if(date == null){
+        if (date == null) {
             throw new ParamErrorException(ResultCode.PARAM_IS_INVALID);
         }
         cal.setTime(date);

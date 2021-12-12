@@ -4,7 +4,6 @@ import com.shu.ssc.common.result.ResultCode;
 import lombok.Data;
 
 
-
 @Data
 public class NotFoundException extends Exception {
 

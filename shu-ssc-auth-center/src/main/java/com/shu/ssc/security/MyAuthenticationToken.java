@@ -20,7 +20,6 @@ public class MyAuthenticationToken extends AbstractAuthenticationToken {
     SecurityUser securityUser;
 
 
-
     //对外部开放的构造方法
     public static MyAuthenticationToken build(SecurityUser securityUser) {
         return new MyAuthenticationToken(buildGrantedAuthority(securityUser.getRoles()), securityUser);

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shu.ssc.mapper.TeacherMapper">
+  <resultMap id="BaseResultMap" type="com.shu.ssc.entity.Teacher">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="phone_id" jdbcType="VARCHAR" property="phoneId" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="school" jdbcType="VARCHAR" property="school" />
+    <result column="major_id" jdbcType="INTEGER" property="majorId" />
+    <result column="teacher_pic_url" jdbcType="VARCHAR" property="teacherPicUrl" />
+    <result column="teacher_status" jdbcType="BIT" property="teacherStatus" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shu.ssc.entity.Teacher">
+    <result column="intro" jdbcType="LONGVARCHAR" property="intro" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, name, phone_id, password, sex, school, major_id, teacher_pic_url, teacher_status
+  </sql>
+  <sql id="Blob_Column_List">
+    intro
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from teachers
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from teachers
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shu.ssc.entity.Teacher">
+    insert into teachers (user_id, name, phone_id, 
+      password, sex, school, 
+      major_id, teacher_pic_url, teacher_status, 
+      intro)
+    values (#{userId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phoneId,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, 
+      #{majorId,jdbcType=INTEGER}, #{teacherPicUrl,jdbcType=VARCHAR}, #{teacherStatus,jdbcType=BIT}, 
+      #{intro,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shu.ssc.entity.Teacher">
+    insert into teachers
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="phoneId != null">
+        phone_id,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="school != null">
+        school,
+      </if>
+      <if test="majorId != null">
+        major_id,
+      </if>
+      <if test="teacherPicUrl != null">
+        teacher_pic_url,
+      </if>
+      <if test="teacherStatus != null">
+        teacher_status,
+      </if>
+      <if test="intro != null">
+        intro,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneId != null">
+        #{phoneId,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null">
+        #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="majorId != null">
+        #{majorId,jdbcType=INTEGER},
+      </if>
+      <if test="teacherPicUrl != null">
+        #{teacherPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherStatus != null">
+        #{teacherStatus,jdbcType=BIT},
+      </if>
+      <if test="intro != null">
+        #{intro,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shu.ssc.entity.Teacher">
+    update teachers
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneId != null">
+        phone_id = #{phoneId,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null">
+        school = #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="majorId != null">
+        major_id = #{majorId,jdbcType=INTEGER},
+      </if>
+      <if test="teacherPicUrl != null">
+        teacher_pic_url = #{teacherPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherStatus != null">
+        teacher_status = #{teacherStatus,jdbcType=BIT},
+      </if>
+      <if test="intro != null">
+        intro = #{intro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shu.ssc.entity.Teacher">
+    update teachers
+    set name = #{name,jdbcType=VARCHAR},
+      phone_id = #{phoneId,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      major_id = #{majorId,jdbcType=INTEGER},
+      teacher_pic_url = #{teacherPicUrl,jdbcType=VARCHAR},
+      teacher_status = #{teacherStatus,jdbcType=BIT},
+      intro = #{intro,jdbcType=LONGVARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shu.ssc.entity.Teacher">
+    update teachers
+    set name = #{name,jdbcType=VARCHAR},
+      phone_id = #{phoneId,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      major_id = #{majorId,jdbcType=INTEGER},
+      teacher_pic_url = #{teacherPicUrl,jdbcType=VARCHAR},
+      teacher_status = #{teacherStatus,jdbcType=BIT}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

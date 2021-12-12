@@ -8,6 +8,7 @@ import com.shu.ssc.utils.exceptionUtils.NotFoundException;
 import com.shu.ssc.utils.exceptionUtils.ParamErrorException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 
@@ -17,10 +18,11 @@ import java.sql.Timestamp;
  * @description
  */
 @Service
+//@Transactional
 public class StudentServiceImpl implements StudentService {
 
-//    @Autowired
-//    StudentMapper studentMapper;
+    @Autowired
+    StudentMapper studentMapper;
 
     @Override
     public Student loginByPassword(String phoneId, String password) throws NotFoundException, ParamErrorException {
@@ -33,5 +35,10 @@ public class StudentServiceImpl implements StudentService {
 //        }
 //        return student;
         return new Student("13564060822", "123321", new Timestamp(0));
+    }
+
+    @Override
+    public Student getOne(Integer id) {
+        return studentMapper.getOne(id);
     }
 }

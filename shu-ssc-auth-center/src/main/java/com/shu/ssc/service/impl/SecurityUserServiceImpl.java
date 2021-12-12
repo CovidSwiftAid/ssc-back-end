@@ -10,6 +10,7 @@ import com.shu.ssc.service.feignService.StudentService;
 import com.shu.ssc.utils.DateUtil;
 import com.shu.ssc.utils.exceptionUtils.NotFoundException;
 import com.shu.ssc.utils.exceptionUtils.ParamErrorException;
+import com.shu.ssc.utils.feignUtils.ConvertUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,8 @@ public class SecurityUserServiceImpl implements SecurityUserService {
         LoginDto dto = new LoginDto(securityUser.getPhoneId(), securityUser.getPassword());
         switch (securityUser.getType()) {//判断用户类型选择service
             case ("student"):
-                Student student = (Student) studentService.loginByPassword(dto).getData();
+                // 通过studentSerivice远程调用student-api模块下的loginByPassword
+                Student student = (Student) ConvertUtil.getFeignResult(studentService.loginByPassword(dto).getData(), new Student());
                 List<String> studentRoles = new ArrayList<>();
                 studentRoles.add("ROLE_STUDENT");
                 if (DateUtil.getNowDate().before(DateUtil.stringToDate(student.getVipDate()))) {//若学生是vip则授予vip权限

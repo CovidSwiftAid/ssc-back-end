@@ -6,4 +6,5 @@ spring:
     password: Vurtne1012
 mybatis:
   mapper-locations: classpath*:/mapper/**Mapper.xml
+  type-aliases-package: com.shu.ssc.entity  #映射实体类包名，不区分大小写
 

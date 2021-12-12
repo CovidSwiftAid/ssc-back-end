@@ -29,14 +29,14 @@
             <optional>true</optional>
         </dependency>
 
-<!--        hutool工具包-->
+        <!--        hutool工具包-->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.7.14</version>
         </dependency>
 
-<!--        swagger-->
+        <!--        swagger-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
@@ -47,20 +47,20 @@
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
 
-<!--        openfeign-->
+        <!--        openfeign-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-<!--        sentinel-->
+        <!--        sentinel-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
             <version>2.2.6.RELEASE</version>
         </dependency>
 
-<!--        sentinel nacos持久化-->
+        <!--        sentinel nacos持久化-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>

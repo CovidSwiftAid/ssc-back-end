@@ -13,5 +13,5 @@ import org.springframework.stereotype.Component;
  */
 public interface SecurityUserService {
 
-    void authenticateAndAuthorize(SecurityUser securityUser)throws NotFoundException, ParamErrorException;
+    void authenticateAndAuthorize(SecurityUser securityUser) throws NotFoundException, ParamErrorException;
 }

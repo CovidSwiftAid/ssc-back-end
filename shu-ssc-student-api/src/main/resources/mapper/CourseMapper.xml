@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shu.ssc.mapper.CourseMapper">
+  <resultMap id="BaseResultMap" type="com.shu.ssc.entity.Course">
+    <id column="course_id" jdbcType="INTEGER" property="courseId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="upload_time" jdbcType="TIMESTAMP" property="uploadTime" />
+    <result column="teacher_id" jdbcType="INTEGER" property="teacherId" />
+    <result column="prefer_id" jdbcType="INTEGER" property="preferId" />
+    <result column="course_pic" jdbcType="VARCHAR" property="coursePic" />
+    <result column="course_status" jdbcType="INTEGER" property="courseStatus" />
+    <result column="need_vip" jdbcType="BIT" property="needVip" />
+    <result column="course_avg_mark" jdbcType="DECIMAL" property="courseAvgMark" />
+    <result column="course_watches" jdbcType="INTEGER" property="courseWatches" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shu.ssc.entity.Course">
+    <result column="intro" jdbcType="LONGVARCHAR" property="intro" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    course_id, name, upload_time, teacher_id, prefer_id, course_pic, course_status, need_vip, 
+    course_avg_mark, course_watches
+  </sql>
+  <sql id="Blob_Column_List">
+    intro
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from course
+    where course_id = #{courseId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from course
+    where course_id = #{courseId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shu.ssc.entity.Course">
+    insert into course (course_id, name, upload_time, 
+      teacher_id, prefer_id, course_pic, 
+      course_status, need_vip, course_avg_mark, 
+      course_watches, intro)
+    values (#{courseId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{uploadTime,jdbcType=TIMESTAMP}, 
+      #{teacherId,jdbcType=INTEGER}, #{preferId,jdbcType=INTEGER}, #{coursePic,jdbcType=VARCHAR}, 
+      #{courseStatus,jdbcType=INTEGER}, #{needVip,jdbcType=BIT}, #{courseAvgMark,jdbcType=DECIMAL}, 
+      #{courseWatches,jdbcType=INTEGER}, #{intro,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shu.ssc.entity.Course">
+    insert into course
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="courseId != null">
+        course_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="uploadTime != null">
+        upload_time,
+      </if>
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
+      <if test="preferId != null">
+        prefer_id,
+      </if>
+      <if test="coursePic != null">
+        course_pic,
+      </if>
+      <if test="courseStatus != null">
+        course_status,
+      </if>
+      <if test="needVip != null">
+        need_vip,
+      </if>
+      <if test="courseAvgMark != null">
+        course_avg_mark,
+      </if>
+      <if test="courseWatches != null">
+        course_watches,
+      </if>
+      <if test="intro != null">
+        intro,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="courseId != null">
+        #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null">
+        #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=INTEGER},
+      </if>
+      <if test="preferId != null">
+        #{preferId,jdbcType=INTEGER},
+      </if>
+      <if test="coursePic != null">
+        #{coursePic,jdbcType=VARCHAR},
+      </if>
+      <if test="courseStatus != null">
+        #{courseStatus,jdbcType=INTEGER},
+      </if>
+      <if test="needVip != null">
+        #{needVip,jdbcType=BIT},
+      </if>
+      <if test="courseAvgMark != null">
+        #{courseAvgMark,jdbcType=DECIMAL},
+      </if>
+      <if test="courseWatches != null">
+        #{courseWatches,jdbcType=INTEGER},
+      </if>
+      <if test="intro != null">
+        #{intro,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shu.ssc.entity.Course">
+    update course
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null">
+        upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="teacherId != null">
+        teacher_id = #{teacherId,jdbcType=INTEGER},
+      </if>
+      <if test="preferId != null">
+        prefer_id = #{preferId,jdbcType=INTEGER},
+      </if>
+      <if test="coursePic != null">
+        course_pic = #{coursePic,jdbcType=VARCHAR},
+      </if>
+      <if test="courseStatus != null">
+        course_status = #{courseStatus,jdbcType=INTEGER},
+      </if>
+      <if test="needVip != null">
+        need_vip = #{needVip,jdbcType=BIT},
+      </if>
+      <if test="courseAvgMark != null">
+        course_avg_mark = #{courseAvgMark,jdbcType=DECIMAL},
+      </if>
+      <if test="courseWatches != null">
+        course_watches = #{courseWatches,jdbcType=INTEGER},
+      </if>
+      <if test="intro != null">
+        intro = #{intro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shu.ssc.entity.Course">
+    update course
+    set name = #{name,jdbcType=VARCHAR},
+      upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      teacher_id = #{teacherId,jdbcType=INTEGER},
+      prefer_id = #{preferId,jdbcType=INTEGER},
+      course_pic = #{coursePic,jdbcType=VARCHAR},
+      course_status = #{courseStatus,jdbcType=INTEGER},
+      need_vip = #{needVip,jdbcType=BIT},
+      course_avg_mark = #{courseAvgMark,jdbcType=DECIMAL},
+      course_watches = #{courseWatches,jdbcType=INTEGER},
+      intro = #{intro,jdbcType=LONGVARCHAR}
+    where course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shu.ssc.entity.Course">
+    update course
+    set name = #{name,jdbcType=VARCHAR},
+      upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      teacher_id = #{teacherId,jdbcType=INTEGER},
+      prefer_id = #{preferId,jdbcType=INTEGER},
+      course_pic = #{coursePic,jdbcType=VARCHAR},
+      course_status = #{courseStatus,jdbcType=INTEGER},
+      need_vip = #{needVip,jdbcType=BIT},
+      course_avg_mark = #{courseAvgMark,jdbcType=DECIMAL},
+      course_watches = #{courseWatches,jdbcType=INTEGER}
+    where course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+</mapper>

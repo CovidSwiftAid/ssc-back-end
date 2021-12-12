@@ -1,7 +1,6 @@
 package com.shu.ssc.config;
 
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -36,6 +35,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .version("1.0")
                 .build();
     }
+
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         // 解决静态资源无法访问

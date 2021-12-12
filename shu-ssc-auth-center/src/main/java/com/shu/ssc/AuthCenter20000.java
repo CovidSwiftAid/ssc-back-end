@@ -15,7 +15,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-//@EnableConfigurationProperties( value = { JwtUtil.class } )
 public class AuthCenter20000 {
     public static void main(String[] args) {
         SpringApplication.run(AuthCenter20000.class, args);

@@ -14,7 +14,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableDiscoveryClient
 public class StudentApiMain80 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SpringApplication.run(StudentApiMain80.class, args);
     }
 }

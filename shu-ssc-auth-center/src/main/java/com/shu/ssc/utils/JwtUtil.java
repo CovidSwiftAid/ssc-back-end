@@ -25,11 +25,11 @@ import java.util.Date;
 @Slf4j
 @Data
 @Component
-@ConfigurationProperties(prefix = "ssc-auth-center.jwt" , ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "ssc-auth-center.jwt", ignoreUnknownFields = false)
 @PropertySource("classpath:application.properties")
 public class JwtUtil {
 
-//    @Value("${spring.application.name}")
+    //    @Value("${spring.application.name}")
     private String secret;
     private long expire;
     private String header;

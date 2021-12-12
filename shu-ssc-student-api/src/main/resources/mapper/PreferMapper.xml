@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shu.ssc.mapper.PreferMapper">
+  <resultMap id="BaseResultMap" type="com.shu.ssc.entity.Prefer">
+    <id column="prefer_id" jdbcType="INTEGER" property="preferId" />
+    <result column="prefer_content" jdbcType="VARCHAR" property="preferContent" />
+    <result column="major_id" jdbcType="INTEGER" property="majorId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    prefer_id, prefer_content, major_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from prefer
+    where prefer_id = #{preferId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from prefer
+    where prefer_id = #{preferId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shu.ssc.entity.Prefer">
+    insert into prefer (prefer_id, prefer_content, major_id
+      )
+    values (#{preferId,jdbcType=INTEGER}, #{preferContent,jdbcType=VARCHAR}, #{majorId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shu.ssc.entity.Prefer">
+    insert into prefer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="preferId != null">
+        prefer_id,
+      </if>
+      <if test="preferContent != null">
+        prefer_content,
+      </if>
+      <if test="majorId != null">
+        major_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="preferId != null">
+        #{preferId,jdbcType=INTEGER},
+      </if>
+      <if test="preferContent != null">
+        #{preferContent,jdbcType=VARCHAR},
+      </if>
+      <if test="majorId != null">
+        #{majorId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shu.ssc.entity.Prefer">
+    update prefer
+    <set>
+      <if test="preferContent != null">
+        prefer_content = #{preferContent,jdbcType=VARCHAR},
+      </if>
+      <if test="majorId != null">
+        major_id = #{majorId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where prefer_id = #{preferId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shu.ssc.entity.Prefer">
+    update prefer
+    set prefer_content = #{preferContent,jdbcType=VARCHAR},
+      major_id = #{majorId,jdbcType=INTEGER}
+    where prefer_id = #{preferId,jdbcType=INTEGER}
+  </update>
+</mapper>

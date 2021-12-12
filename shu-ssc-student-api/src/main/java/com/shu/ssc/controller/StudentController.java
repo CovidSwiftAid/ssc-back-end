@@ -28,13 +28,12 @@ public class StudentController {
     StudentService studentService;
 
 
-    @GetMapping("/test")
-    @ApiOperation(value = "测试内网穿透接口")
-    public Result test() {
-        String info = "success";
-        return Result.success(info);
-    }
-
+//    @GetMapping("/test")
+//    @ApiOperation(value = "测试内网穿透接口")
+//    public Result test() {
+//        String info = "success";
+//        return Result.success(info);
+//    }
 
 
     @PostMapping("/loginByPasswordForAuth")
@@ -43,8 +42,25 @@ public class StudentController {
     @SentinelResource
     public Result loginByPassword(@RequestBody LoginDto loginDto) throws NotFoundException, ParamErrorException {
         Student student = studentService.loginByPassword(loginDto.getPhone(), loginDto.getPassword());
-        student = new Student("13564060822", "123321", new Timestamp(1));
+        LoginDto dto = new LoginDto(student.getPhoneId(), student.getPassword());
         log.info("远程服务调用: loginByPasswordForAuth");
-        return Result.success(student);
+        return Result.success(dto);
+    }
+
+//    @GetMapping("/getStudent")
+//    @ApiOperation(value = "获取所有学生详情")
+////	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+//    @ResponseBody
+//    public Iterable<Student> findAll() {
+//        return studentService.getAllStudents();
+//    }
+
+
+    @GetMapping("/getOneStudent")
+    @ApiOperation(value = "获取一个学生")
+//	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+    @ResponseBody
+    public Student findOne(int id) {
+        return studentService.getOne(id);
     }
 }
