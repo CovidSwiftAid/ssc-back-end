@@ -1,4 +1,4 @@
-package com.shu.ssc.dto;
+package com.shu.ssc.common.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class LoginDto {
-    String phone;
+    String phoneId;
     String password;
 }
 

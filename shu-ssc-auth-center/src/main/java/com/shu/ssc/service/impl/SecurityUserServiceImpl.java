@@ -2,7 +2,7 @@ package com.shu.ssc.service.impl;
 
 
 import com.shu.ssc.common.result.ResultCode;
-import com.shu.ssc.dto.LoginDto;
+import com.shu.ssc.common.dto.LoginDto;
 import com.shu.ssc.entity.Student;
 import com.shu.ssc.security.SecurityUser;
 import com.shu.ssc.service.SecurityUserService;
@@ -37,7 +37,7 @@ public class SecurityUserServiceImpl implements SecurityUserService {
                 Student student = (Student) ConvertUtil.getFeignResult(studentService.loginByPassword(dto).getData(), new Student());
                 List<String> studentRoles = new ArrayList<>();
                 studentRoles.add("ROLE_STUDENT");
-                if (DateUtil.getNowDate().before(DateUtil.stringToDate(student.getVipDate()))) {//若学生是vip则授予vip权限
+                if (DateUtil.getNowDate().before(student.getVipDate())) {//若学生是vip则授予vip权限
                     studentRoles.add("STUDENT_VIP");
                 }
                 securityUser.setRoles(studentRoles);

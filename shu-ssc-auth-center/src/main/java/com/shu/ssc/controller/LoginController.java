@@ -1,10 +1,9 @@
 package com.shu.ssc.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shu.ssc.common.result.Result;
 import com.shu.ssc.common.result.ResultCode;
-import com.shu.ssc.dto.LoginDto;
+import com.shu.ssc.common.dto.LoginDto;
 import com.shu.ssc.entity.Student;
 import com.shu.ssc.service.feignService.StudentService;
 import com.shu.ssc.utils.JwtUtil;
@@ -44,8 +43,9 @@ public class LoginController {
     @PreAuthorize("hasAnyAuthority('ROLE_STUDENT')")
     @GetMapping("/test")
     @SentinelResource
+    @ApiOperation(value = "认证测试，header中需要有Authorization:token才可访问，token通过登录拿到")
     public String test() {
-        return "hello" + secret;
+        return "认证成功！";
     }
 
 
@@ -54,7 +54,7 @@ public class LoginController {
     @ResponseBody
     @SentinelResource
     public Result loginByPassword(@RequestBody LoginDto loginDto, HttpServletResponse response) throws NotFoundException, ParamErrorException {
-        LoginDto dto = new LoginDto(loginDto.getPhone(), loginDto.getPassword());
+        LoginDto dto = new LoginDto(loginDto.getPhoneId(), loginDto.getPassword());
         // 通过studentSerivice远程调用student-api模块下的loginByPassword
         Student student = (Student) ConvertUtil.getFeignResult(studentService.loginByPassword(dto).getData(), new Student());
         if (student == null) {
@@ -68,15 +68,15 @@ public class LoginController {
         return Result.success(student);
     }
 
-    @PostMapping("/feignTest")
-    @ApiOperation(value = "openfeign test")
-    @ResponseBody
-    public Result feignTest() throws NotFoundException, ParamErrorException {
-        LoginDto dto = new LoginDto("13564060822", "123321");
-        // 通过studentSerivice远程调用student-api模块下的loginByPassword
-        Student res = (Student) ConvertUtil.getFeignResult(studentService.loginByPassword(dto).getData(), new Student());
-        return Result.success(res);
-    }
+//    @PostMapping("/feignTest")
+//    @ApiOperation(value = "openfeign test")
+//    @ResponseBody
+//    public Result feignTest() throws NotFoundException, ParamErrorException {
+//        LoginDto dto = new LoginDto("13564060822", "123321");
+//        // 通过studentSerivice远程调用student-api模块下的loginByPassword
+//        Student res = (Student) ConvertUtil.getFeignResult(studentService.loginByPassword(dto).getData(), new Student());
+//        return Result.success(res);
+//    }
 
     //git test
 }

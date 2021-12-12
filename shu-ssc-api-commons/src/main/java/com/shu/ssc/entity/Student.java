@@ -7,6 +7,7 @@ import lombok.Data;
 
 @Data
 public class Student {
+
     private Integer userId;
 
     private String nickname;

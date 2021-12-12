@@ -76,15 +76,22 @@
     <orderEntry type="library" name="Maven: com.alibaba.csp:sentinel-cluster-server-default:1.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.csp:sentinel-cluster-common-default:1.8.1" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.69.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.69.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.69.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.69.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.69.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.69.Final" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.csp:sentinel-cluster-client-default:1.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-alibaba-sentinel-datasource:2.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.csp:sentinel-datasource-nacos:1.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.csp:sentinel-datasource-extension:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:2.5.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.5.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.5.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.5.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.12" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.3.12" level="project" />
+    <orderEntry type="library" name="Maven: io.lettuce:lettuce-core:6.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.69.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.69.Final" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-alibaba-commons:2.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-client:1.4.2" level="project" />
@@ -163,7 +170,6 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.5.6" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.3.12" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.12" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.7" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.6" level="project" />
