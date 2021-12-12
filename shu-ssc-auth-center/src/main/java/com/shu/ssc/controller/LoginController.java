@@ -41,6 +41,7 @@ public class LoginController {
     String secret;
 
     @GetMapping("/test")
+    @SentinelResource
     public String test() {
         return "hello" + secret;
     }

@@ -57,6 +57,7 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>2.2.6.RELEASE</version>
         </dependency>
 
 <!--        sentinel nacos持久化-->

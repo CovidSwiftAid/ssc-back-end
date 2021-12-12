@@ -19,8 +19,8 @@ spring:
 
     sentinel:
       transport:
-        dashboard: localhost:8080
-        port: 8719
+        dashboard: 127.0.0.1:8080
+#        port: 8719
   security:
     user:
       name: vurtne
