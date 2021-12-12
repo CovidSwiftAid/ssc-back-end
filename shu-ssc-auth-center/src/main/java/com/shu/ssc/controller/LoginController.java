@@ -72,4 +72,6 @@ public class LoginController {
         Student res = (Student) ConvertUtil.getFeignResult(studentService.loginByPassword(dto).getData(), new Student());
         return Result.success(res);
     }
+
+    //git test
 }
