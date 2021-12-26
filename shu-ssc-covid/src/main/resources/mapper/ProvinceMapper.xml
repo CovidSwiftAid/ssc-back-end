@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shu.ssc.mapper.ProvinceMapper">
+  <resultMap id="BaseResultMap" type="com.shu.ssc.entity.covid.Province">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="confirmed" jdbcType="INTEGER" property="confirmed" />
+    <result column="died" jdbcType="INTEGER" property="died" />
+    <result column="cured" jdbcType="INTEGER" property="cured" />
+    <result column="relative_time" jdbcType="CHAR" property="relativeTime" />
+    <result column="confirm_relative" jdbcType="INTEGER" property="confirmRelative" />
+    <result column="died_relative" jdbcType="INTEGER" property="diedRelative" />
+    <result column="cured_relative" jdbcType="INTEGER" property="curedRelative" />
+    <result column="asymptomatic_relative" jdbcType="INTEGER" property="asymptomaticRelative" />
+    <result column="asymptomatic" jdbcType="INTEGER" property="asymptomatic" />
+    <result column="cur_confirm" jdbcType="INTEGER" property="curConfirm" />
+    <result column="cur_confirm_relative" jdbcType="INTEGER" property="curConfirmRelative" />
+    <result column="province" jdbcType="CHAR" property="province" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, confirmed, died, cured, relative_time, confirm_relative, died_relative, cured_relative, 
+    asymptomatic_relative, asymptomatic, cur_confirm, cur_confirm_relative, province
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from province
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from province
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shu.ssc.entity.covid.Province">
+    insert into province (id, confirmed, died, 
+      cured, relative_time, confirm_relative, 
+      died_relative, cured_relative, asymptomatic_relative, 
+      asymptomatic, cur_confirm, cur_confirm_relative, 
+      province)
+    values (#{id,jdbcType=INTEGER}, #{confirmed,jdbcType=INTEGER}, #{died,jdbcType=INTEGER}, 
+      #{cured,jdbcType=INTEGER}, #{relativeTime,jdbcType=CHAR}, #{confirmRelative,jdbcType=INTEGER}, 
+      #{diedRelative,jdbcType=INTEGER}, #{curedRelative,jdbcType=INTEGER}, #{asymptomaticRelative,jdbcType=INTEGER}, 
+      #{asymptomatic,jdbcType=INTEGER}, #{curConfirm,jdbcType=INTEGER}, #{curConfirmRelative,jdbcType=INTEGER}, 
+      #{province,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shu.ssc.entity.covid.Province">
+    insert into province
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="confirmed != null">
+        confirmed,
+      </if>
+      <if test="died != null">
+        died,
+      </if>
+      <if test="cured != null">
+        cured,
+      </if>
+      <if test="relativeTime != null">
+        relative_time,
+      </if>
+      <if test="confirmRelative != null">
+        confirm_relative,
+      </if>
+      <if test="diedRelative != null">
+        died_relative,
+      </if>
+      <if test="curedRelative != null">
+        cured_relative,
+      </if>
+      <if test="asymptomaticRelative != null">
+        asymptomatic_relative,
+      </if>
+      <if test="asymptomatic != null">
+        asymptomatic,
+      </if>
+      <if test="curConfirm != null">
+        cur_confirm,
+      </if>
+      <if test="curConfirmRelative != null">
+        cur_confirm_relative,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="confirmed != null">
+        #{confirmed,jdbcType=INTEGER},
+      </if>
+      <if test="died != null">
+        #{died,jdbcType=INTEGER},
+      </if>
+      <if test="cured != null">
+        #{cured,jdbcType=INTEGER},
+      </if>
+      <if test="relativeTime != null">
+        #{relativeTime,jdbcType=CHAR},
+      </if>
+      <if test="confirmRelative != null">
+        #{confirmRelative,jdbcType=INTEGER},
+      </if>
+      <if test="diedRelative != null">
+        #{diedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="curedRelative != null">
+        #{curedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="asymptomaticRelative != null">
+        #{asymptomaticRelative,jdbcType=INTEGER},
+      </if>
+      <if test="asymptomatic != null">
+        #{asymptomatic,jdbcType=INTEGER},
+      </if>
+      <if test="curConfirm != null">
+        #{curConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="curConfirmRelative != null">
+        #{curConfirmRelative,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shu.ssc.entity.covid.Province">
+    update province
+    <set>
+      <if test="confirmed != null">
+        confirmed = #{confirmed,jdbcType=INTEGER},
+      </if>
+      <if test="died != null">
+        died = #{died,jdbcType=INTEGER},
+      </if>
+      <if test="cured != null">
+        cured = #{cured,jdbcType=INTEGER},
+      </if>
+      <if test="relativeTime != null">
+        relative_time = #{relativeTime,jdbcType=CHAR},
+      </if>
+      <if test="confirmRelative != null">
+        confirm_relative = #{confirmRelative,jdbcType=INTEGER},
+      </if>
+      <if test="diedRelative != null">
+        died_relative = #{diedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="curedRelative != null">
+        cured_relative = #{curedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="asymptomaticRelative != null">
+        asymptomatic_relative = #{asymptomaticRelative,jdbcType=INTEGER},
+      </if>
+      <if test="asymptomatic != null">
+        asymptomatic = #{asymptomatic,jdbcType=INTEGER},
+      </if>
+      <if test="curConfirm != null">
+        cur_confirm = #{curConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="curConfirmRelative != null">
+        cur_confirm_relative = #{curConfirmRelative,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shu.ssc.entity.covid.Province">
+    update province
+    set confirmed = #{confirmed,jdbcType=INTEGER},
+      died = #{died,jdbcType=INTEGER},
+      cured = #{cured,jdbcType=INTEGER},
+      relative_time = #{relativeTime,jdbcType=CHAR},
+      confirm_relative = #{confirmRelative,jdbcType=INTEGER},
+      died_relative = #{diedRelative,jdbcType=INTEGER},
+      cured_relative = #{curedRelative,jdbcType=INTEGER},
+      asymptomatic_relative = #{asymptomaticRelative,jdbcType=INTEGER},
+      asymptomatic = #{asymptomatic,jdbcType=INTEGER},
+      cur_confirm = #{curConfirm,jdbcType=INTEGER},
+      cur_confirm_relative = #{curConfirmRelative,jdbcType=INTEGER},
+      province = #{province,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getAllProvince" resultType="com.shu.ssc.entity.covid.Province">
+    select * from province;
+  </select>
+</mapper>

@@ -88,6 +88,7 @@
     <orderEntry type="library" name="Maven: io.lettuce:lettuce-core:6.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.69.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.69.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid:1.1.16" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-alibaba-commons:2.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-client:1.4.2" level="project" />

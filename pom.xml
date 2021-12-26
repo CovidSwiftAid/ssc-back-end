@@ -12,6 +12,7 @@
         <module>shu-ssc-gateway</module>
         <module>shu-ssc-auth-center</module>
         <module>shu-ssc-student-api</module>
+        <module>shu-ssc-covid</module>
     </modules>
     <packaging>pom</packaging>
 

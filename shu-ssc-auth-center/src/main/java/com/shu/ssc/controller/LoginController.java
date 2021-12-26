@@ -1,6 +1,7 @@
 package com.shu.ssc.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shu.ssc.common.result.Result;
 import com.shu.ssc.common.result.ResultCode;
 import com.shu.ssc.common.dto.LoginDto;
@@ -56,7 +57,20 @@ public class LoginController {
     public Result loginByPassword(@RequestBody LoginDto loginDto, HttpServletResponse response) throws NotFoundException, ParamErrorException {
         LoginDto dto = new LoginDto(loginDto.getPhoneId(), loginDto.getPassword());
         // 通过studentSerivice远程调用student-api模块下的loginByPassword
-        Student student = (Student) ConvertUtil.getFeignResult(studentService.loginByPassword(dto).getData(), new Student());
+//        Student student = (Student) ConvertUtil.getFeignResult(studentService.loginByPassword(dto).getData(), new Student());
+        Student student = new Student();
+        ObjectMapper mapper = new ObjectMapper();  // 通过ObjectMapper获取映射
+        try {
+            Class<?> targetClass = Class.forName(student.getClass().getName());  // 获取指定对象类
+            student = (Student) mapper.convertValue(studentService.loginByPassword(dto).getData(), targetClass);
+        } catch (ClassNotFoundException e) {
+            log.error(e.getMessage());
+        }
+
+
+
+
+
         if (student == null) {
             log.error("登陆失败");
             return Result.failure(ResultCode.USER_NOT_EXIST);

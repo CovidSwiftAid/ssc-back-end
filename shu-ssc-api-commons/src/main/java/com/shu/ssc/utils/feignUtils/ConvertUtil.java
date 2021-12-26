@@ -1,7 +1,6 @@
 package com.shu.ssc.utils.feignUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 
 /**

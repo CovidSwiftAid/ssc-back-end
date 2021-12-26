@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shu.ssc.mapper.SumdomMapper">
+  <resultMap id="BaseResultMap" type="com.shu.ssc.entity.covid.Sumdom">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="confirmed" jdbcType="INTEGER" property="confirmed" />
+    <result column="died" jdbcType="INTEGER" property="died" />
+    <result column="cured" jdbcType="INTEGER" property="cured" />
+    <result column="asymptomatic" jdbcType="INTEGER" property="asymptomatic" />
+    <result column="asymptomatic_relative" jdbcType="INTEGER" property="asymptomaticRelative" />
+    <result column="unconfirmed" jdbcType="INTEGER" property="unconfirmed" />
+    <result column="relative_time" jdbcType="CHAR" property="relativeTime" />
+    <result column="confirmed_relative" jdbcType="INTEGER" property="confirmedRelative" />
+    <result column="unconfirmed_relative" jdbcType="INTEGER" property="unconfirmedRelative" />
+    <result column="cured_relative" jdbcType="INTEGER" property="curedRelative" />
+    <result column="died_relative" jdbcType="INTEGER" property="diedRelative" />
+    <result column="serious" jdbcType="INTEGER" property="serious" />
+    <result column="serious_relative" jdbcType="INTEGER" property="seriousRelative" />
+    <result column="foreign_input" jdbcType="INTEGER" property="foreignInput" />
+    <result column="foreign_input_relative" jdbcType="INTEGER" property="foreignInputRelative" />
+    <result column="cur_confirm" jdbcType="INTEGER" property="curConfirm" />
+    <result column="cur_confirm_relative" jdbcType="INTEGER" property="curConfirmRelative" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, confirmed, died, cured, asymptomatic, asymptomatic_relative, unconfirmed, relative_time, 
+    confirmed_relative, unconfirmed_relative, cured_relative, died_relative, serious, 
+    serious_relative, foreign_input, foreign_input_relative, cur_confirm, cur_confirm_relative
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sumdom
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sumdom
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shu.ssc.entity.covid.Sumdom">
+    insert into sumdom (id, confirmed, died, 
+      cured, asymptomatic, asymptomatic_relative, 
+      unconfirmed, relative_time, confirmed_relative, 
+      unconfirmed_relative, cured_relative, died_relative, 
+      serious, serious_relative, foreign_input, 
+      foreign_input_relative, cur_confirm, cur_confirm_relative
+      )
+    values (#{id,jdbcType=INTEGER}, #{confirmed,jdbcType=INTEGER}, #{died,jdbcType=INTEGER}, 
+      #{cured,jdbcType=INTEGER}, #{asymptomatic,jdbcType=INTEGER}, #{asymptomaticRelative,jdbcType=INTEGER}, 
+      #{unconfirmed,jdbcType=INTEGER}, #{relativeTime,jdbcType=CHAR}, #{confirmedRelative,jdbcType=INTEGER}, 
+      #{unconfirmedRelative,jdbcType=INTEGER}, #{curedRelative,jdbcType=INTEGER}, #{diedRelative,jdbcType=INTEGER}, 
+      #{serious,jdbcType=INTEGER}, #{seriousRelative,jdbcType=INTEGER}, #{foreignInput,jdbcType=INTEGER}, 
+      #{foreignInputRelative,jdbcType=INTEGER}, #{curConfirm,jdbcType=INTEGER}, #{curConfirmRelative,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shu.ssc.entity.covid.Sumdom">
+    insert into sumdom
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="confirmed != null">
+        confirmed,
+      </if>
+      <if test="died != null">
+        died,
+      </if>
+      <if test="cured != null">
+        cured,
+      </if>
+      <if test="asymptomatic != null">
+        asymptomatic,
+      </if>
+      <if test="asymptomaticRelative != null">
+        asymptomatic_relative,
+      </if>
+      <if test="unconfirmed != null">
+        unconfirmed,
+      </if>
+      <if test="relativeTime != null">
+        relative_time,
+      </if>
+      <if test="confirmedRelative != null">
+        confirmed_relative,
+      </if>
+      <if test="unconfirmedRelative != null">
+        unconfirmed_relative,
+      </if>
+      <if test="curedRelative != null">
+        cured_relative,
+      </if>
+      <if test="diedRelative != null">
+        died_relative,
+      </if>
+      <if test="serious != null">
+        serious,
+      </if>
+      <if test="seriousRelative != null">
+        serious_relative,
+      </if>
+      <if test="foreignInput != null">
+        foreign_input,
+      </if>
+      <if test="foreignInputRelative != null">
+        foreign_input_relative,
+      </if>
+      <if test="curConfirm != null">
+        cur_confirm,
+      </if>
+      <if test="curConfirmRelative != null">
+        cur_confirm_relative,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="confirmed != null">
+        #{confirmed,jdbcType=INTEGER},
+      </if>
+      <if test="died != null">
+        #{died,jdbcType=INTEGER},
+      </if>
+      <if test="cured != null">
+        #{cured,jdbcType=INTEGER},
+      </if>
+      <if test="asymptomatic != null">
+        #{asymptomatic,jdbcType=INTEGER},
+      </if>
+      <if test="asymptomaticRelative != null">
+        #{asymptomaticRelative,jdbcType=INTEGER},
+      </if>
+      <if test="unconfirmed != null">
+        #{unconfirmed,jdbcType=INTEGER},
+      </if>
+      <if test="relativeTime != null">
+        #{relativeTime,jdbcType=CHAR},
+      </if>
+      <if test="confirmedRelative != null">
+        #{confirmedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="unconfirmedRelative != null">
+        #{unconfirmedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="curedRelative != null">
+        #{curedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="diedRelative != null">
+        #{diedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="serious != null">
+        #{serious,jdbcType=INTEGER},
+      </if>
+      <if test="seriousRelative != null">
+        #{seriousRelative,jdbcType=INTEGER},
+      </if>
+      <if test="foreignInput != null">
+        #{foreignInput,jdbcType=INTEGER},
+      </if>
+      <if test="foreignInputRelative != null">
+        #{foreignInputRelative,jdbcType=INTEGER},
+      </if>
+      <if test="curConfirm != null">
+        #{curConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="curConfirmRelative != null">
+        #{curConfirmRelative,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shu.ssc.entity.covid.Sumdom">
+    update sumdom
+    <set>
+      <if test="confirmed != null">
+        confirmed = #{confirmed,jdbcType=INTEGER},
+      </if>
+      <if test="died != null">
+        died = #{died,jdbcType=INTEGER},
+      </if>
+      <if test="cured != null">
+        cured = #{cured,jdbcType=INTEGER},
+      </if>
+      <if test="asymptomatic != null">
+        asymptomatic = #{asymptomatic,jdbcType=INTEGER},
+      </if>
+      <if test="asymptomaticRelative != null">
+        asymptomatic_relative = #{asymptomaticRelative,jdbcType=INTEGER},
+      </if>
+      <if test="unconfirmed != null">
+        unconfirmed = #{unconfirmed,jdbcType=INTEGER},
+      </if>
+      <if test="relativeTime != null">
+        relative_time = #{relativeTime,jdbcType=CHAR},
+      </if>
+      <if test="confirmedRelative != null">
+        confirmed_relative = #{confirmedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="unconfirmedRelative != null">
+        unconfirmed_relative = #{unconfirmedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="curedRelative != null">
+        cured_relative = #{curedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="diedRelative != null">
+        died_relative = #{diedRelative,jdbcType=INTEGER},
+      </if>
+      <if test="serious != null">
+        serious = #{serious,jdbcType=INTEGER},
+      </if>
+      <if test="seriousRelative != null">
+        serious_relative = #{seriousRelative,jdbcType=INTEGER},
+      </if>
+      <if test="foreignInput != null">
+        foreign_input = #{foreignInput,jdbcType=INTEGER},
+      </if>
+      <if test="foreignInputRelative != null">
+        foreign_input_relative = #{foreignInputRelative,jdbcType=INTEGER},
+      </if>
+      <if test="curConfirm != null">
+        cur_confirm = #{curConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="curConfirmRelative != null">
+        cur_confirm_relative = #{curConfirmRelative,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shu.ssc.entity.covid.Sumdom">
+    update sumdom
+    set confirmed = #{confirmed,jdbcType=INTEGER},
+      died = #{died,jdbcType=INTEGER},
+      cured = #{cured,jdbcType=INTEGER},
+      asymptomatic = #{asymptomatic,jdbcType=INTEGER},
+      asymptomatic_relative = #{asymptomaticRelative,jdbcType=INTEGER},
+      unconfirmed = #{unconfirmed,jdbcType=INTEGER},
+      relative_time = #{relativeTime,jdbcType=CHAR},
+      confirmed_relative = #{confirmedRelative,jdbcType=INTEGER},
+      unconfirmed_relative = #{unconfirmedRelative,jdbcType=INTEGER},
+      cured_relative = #{curedRelative,jdbcType=INTEGER},
+      died_relative = #{diedRelative,jdbcType=INTEGER},
+      serious = #{serious,jdbcType=INTEGER},
+      serious_relative = #{seriousRelative,jdbcType=INTEGER},
+      foreign_input = #{foreignInput,jdbcType=INTEGER},
+      foreign_input_relative = #{foreignInputRelative,jdbcType=INTEGER},
+      cur_confirm = #{curConfirm,jdbcType=INTEGER},
+      cur_confirm_relative = #{curConfirmRelative,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getAllSumdom" resultType="com.shu.ssc.entity.covid.Sumdom">
+    select * from sumdom;
+  </select>
+</mapper>

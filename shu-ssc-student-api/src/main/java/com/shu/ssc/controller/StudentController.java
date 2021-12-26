@@ -17,6 +17,8 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
+
 
 @Slf4j
 @RestController
@@ -40,7 +42,8 @@ public class StudentController {
 
 
     @PostMapping("/loginByPasswordForAuth")
-    @ApiOperation(value = "远程服务调用登录")
+//    @ApiOperation(value = "远程服务调用登录")
+    @ApiIgnore
     @ResponseBody
     @SentinelResource
     public Result loginByPassword(@RequestBody LoginDto loginDto) throws NotFoundException, ParamErrorException {
@@ -54,8 +57,8 @@ public class StudentController {
     @ApiOperation(value = "获取所有学生详情")
 //	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @ResponseBody
-    public Iterable<Student> findAll() {
-        return studentService.getAllStudents();
+    public Result findAll() {
+        return Result.success(studentService.getAllStudents());
     }
 
     @PostMapping("/getStudentById")

@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/online_edu?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/covid?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: Vurtne1012
     type: com.alibaba.druid.pool.DruidDataSource
@@ -25,7 +25,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath*:/mapper/**Mapper.xml
-  type-aliases-package: com.shu.ssc.entity   # 映射实体类包名，不区分大小写
+  type-aliases-package: com.shu.ssc.entity.covid   # 映射实体类包名，不区分大小写
   configuration:
     map-underscore-to-camel-case: true  # 开启全局的驼峰命名规则
 
