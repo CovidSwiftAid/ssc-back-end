@@ -1,10 +1,12 @@
 package com.shu.ssc.controller;
 
 import com.shu.ssc.common.result.Result;
+import com.shu.ssc.redis.CovidInfoKeys;
 import com.shu.ssc.service.NewsService;
 import com.shu.ssc.service.ProvinceService;
 import com.shu.ssc.service.SumdomService;
 import com.shu.ssc.service.WeiboCCTVNewsService;
+import com.shu.ssc.utils.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +40,7 @@ public class NewsController {
     @Resource
     WeiboCCTVNewsService weiboCCTVNewsService;
 
+
     @GetMapping("/getAllProvince")
     @ApiOperation(value = "获取所有省份详情")
 //	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
@@ -67,7 +70,8 @@ public class NewsController {
 //	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @ResponseBody
     public Result getWeiboCCTVNews() {
-        return Result.success(weiboCCTVNewsService.getAllWeiboCCTVNews());
+        log.info("getWeiboCCTVNews(): 获取央视新闻微博");
+        return Result.success(weiboCCTVNewsService.getAllWeiboCCTVNewsFromRedis());
     }
 
 

@@ -17,7 +17,7 @@ public class CovidInfoTask {
     private static final Logger log = LoggerFactory.getLogger(CovidInfoTask.class);
     private int count = 0;
 
-    @Scheduled(cron = "* 0/12 * * * ?")  // 每12小时更新
+//    @Scheduled(cron = "* 0/12 * * * ?")  // 每12小时更新
     public void getCovidInfo() throws IOException, InterruptedException {
         Process process = Runtime.getRuntime().exec("src/main/resources/python/Get-Covid-Info.py");
         process.waitFor();

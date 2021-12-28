@@ -11,4 +11,6 @@ import java.util.List;
  */
 public interface WeiboCCTVNewsService {
     List<WeiboCCTVNews> getAllWeiboCCTVNews();
+
+    List<WeiboCCTVNews> getAllWeiboCCTVNewsFromRedis();
 }

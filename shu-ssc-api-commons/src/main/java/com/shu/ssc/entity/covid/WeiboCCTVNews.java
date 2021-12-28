@@ -2,8 +2,13 @@ package com.shu.ssc.entity.covid;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class WeiboCCTVNews {
+public class WeiboCCTVNews implements Serializable {
+
+//    public static final
+
     private String id;
 
     private String bid;
