@@ -187,6 +187,6 @@
   </update>
 
   <select id="getAllProvince" resultType="com.shu.ssc.entity.covid.Province">
-    select * from province;
+    select * from province
   </select>
 </mapper>

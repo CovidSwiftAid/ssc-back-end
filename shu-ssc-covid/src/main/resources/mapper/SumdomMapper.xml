@@ -247,6 +247,6 @@
   </update>
 
   <select id="getAllSumdom" resultType="com.shu.ssc.entity.covid.Sumdom">
-    select * from sumdom;
+    select * from sumdom
   </select>
 </mapper>

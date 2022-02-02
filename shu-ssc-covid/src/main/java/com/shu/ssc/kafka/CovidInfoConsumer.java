@@ -6,6 +6,7 @@ import com.shu.ssc.service.WeiboCCTVNewsService;
 import com.shu.ssc.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.producer.internals.DefaultPartitioner;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.kafka.support.KafkaHeaders;

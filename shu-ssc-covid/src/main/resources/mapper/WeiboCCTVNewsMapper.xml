@@ -247,6 +247,6 @@
   </update>
 
   <select id="getAllWeiboCCTVNews" resultType="com.shu.ssc.entity.covid.WeiboCCTVNews">
-    select * from weibo_cctv_News;
+    select * from weibo_cctv_News
   </select>
 </mapper>
