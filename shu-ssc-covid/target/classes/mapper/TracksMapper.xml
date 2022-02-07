@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shu.ssc.mapper.TracksMapper">
+    <resultMap id="BaseResultMap" type="com.shu.ssc.entity.covid.Tracks">
+        <id column="id" jdbcType="BIGINT" property="id" />
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shu.ssc.entity.covid.Tracks">
+        <result column="text" jdbcType="LONGVARCHAR" property="text" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    id
+  </sql>
+    <sql id="Blob_Column_List">
+    text
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from track_after_processing
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from track_after_processing
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.shu.ssc.entity.covid.Tracks">
+    insert into track_after_processing (id, text)
+    values (#{id,jdbcType=BIGINT}, #{text,jdbcType=LONGVARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.shu.ssc.entity.covid.Tracks">
+        insert into track_after_processing
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="text != null">
+                text,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="text != null">
+                #{text,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.shu.ssc.entity.covid.Tracks">
+        update track_after_processing
+        <set>
+            <if test="text != null">
+                text = #{text,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shu.ssc.entity.covid.Tracks">
+    update track_after_processing
+    set text = #{text,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+    <select id="getAllTracks" resultType="com.shu.ssc.entity.covid.Tracks">
+    select * from track_after_processing
+  </select>
+</mapper>

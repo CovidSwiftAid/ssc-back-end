@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/shu-ssc-api-commons/shu-ssc-api-commons.iml" filepath="$PROJECT_DIR$/shu-ssc-api-commons/shu-ssc-api-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/shu-ssc-auth-center/shu-ssc-auth-center.iml" filepath="$PROJECT_DIR$/shu-ssc-auth-center/shu-ssc-auth-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shu-ssc-covid/shu-ssc-covid.iml" filepath="$PROJECT_DIR$/shu-ssc-covid/shu-ssc-covid.iml" />
       <module fileurl="file://$PROJECT_DIR$/shu-ssc-gateway/shu-ssc-gateway.iml" filepath="$PROJECT_DIR$/shu-ssc-gateway/shu-ssc-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/shu-ssc-student-api/shu-ssc-student-api.iml" filepath="$PROJECT_DIR$/shu-ssc-student-api/shu-ssc-student-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/student-service-center-back-end.iml" filepath="$PROJECT_DIR$/student-service-center-back-end.iml" />

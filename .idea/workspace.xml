@@ -22,13 +22,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77651a36-3c7d-49a3-b3c0-04c475b3ed40" name="Default Changelist" comment="config">
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/controller/LoginController.java" afterDir="false" />
+    <list default="true" id="77651a36-3c7d-49a3-b3c0-04c475b3ed40" name="Default Changelist" comment="轨迹信息">
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/impl/LoginServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +55,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -56,18 +69,106 @@
     <property name="project.structure.side.proportion" value="0.25316453" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/python" />
+      <recent name="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources" />
+      <recent name="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mybatis" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CovidMain5001">
+    <configuration name="TracksServiceImpl.getAllTracks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shu-ssc-covid" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shu.ssc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shu.ssc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.shu.ssc.service.impl.TracksServiceImpl" />
+      <option name="METHOD_NAME" value="getAllTracks" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TracksServiceImpl.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shu-ssc-covid" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shu.ssc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shu.ssc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.shu.ssc.service.impl.TracksServiceImpl" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthCenter20000" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shu-ssc-auth-center" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shu.ssc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shu.ssc.AuthCenter20000" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CovidMain5001" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shu-ssc-covid" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shu.ssc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shu.ssc.CovidMain5001" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentApiMain80" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shu-ssc-student-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shu.ssc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shu.ssc.StudentApiMain80" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.CovidMain5001" />
+        <item itemvalue="JUnit.TracksServiceImpl.test" />
+        <item itemvalue="JUnit.TracksServiceImpl.getAllTracks" />
+        <item itemvalue="Spring Boot.StudentApiMain80" />
+        <item itemvalue="Spring Boot.AuthCenter20000" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -80,7 +181,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639273351956</updated>
-      <workItem from="1639273353278" duration="5624000" />
+      <workItem from="1639273353278" duration="10607000" />
+      <workItem from="1639289050172" duration="4908000" />
+      <workItem from="1639301461217" duration="2743000" />
+      <workItem from="1639304336888" duration="9500000" />
+      <workItem from="1639391260841" duration="3728000" />
+      <workItem from="1639750261714" duration="5017000" />
+      <workItem from="1639837824096" duration="688000" />
+      <workItem from="1640405661234" duration="14000" />
+      <workItem from="1640405679212" duration="10922000" />
+      <workItem from="1640498326182" duration="249000" />
+      <workItem from="1640498589463" duration="2590000" />
+      <workItem from="1640526353298" duration="694000" />
+      <workItem from="1640590001151" duration="290000" />
+      <workItem from="1640693117463" duration="12317000" />
+      <workItem from="1640773033709" duration="2000" />
+      <workItem from="1640775306853" duration="820000" />
+      <workItem from="1640830610458" duration="219000" />
+      <workItem from="1641119599985" duration="3565000" />
+      <workItem from="1641213195441" duration="1116000" />
+      <workItem from="1641278139361" duration="478000" />
+      <workItem from="1641369054265" duration="179000" />
+      <workItem from="1641446551137" duration="798000" />
+      <workItem from="1641812587288" duration="1999000" />
+      <workItem from="1642572409449" duration="12192000" />
+      <workItem from="1642682373081" duration="786000" />
+      <workItem from="1642844549781" duration="2749000" />
+      <workItem from="1642898843747" duration="285000" />
+      <workItem from="1642905330421" duration="1519000" />
+      <workItem from="1643097503856" duration="686000" />
+      <workItem from="1643277832291" duration="3659000" />
+      <workItem from="1643715089765" duration="1105000" />
+      <workItem from="1643784721599" duration="1754000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <created>1639273481315</created>
@@ -89,7 +221,42 @@
       <option name="project" value="LOCAL" />
       <updated>1639273481315</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="entity and mapper.xml">
+      <created>1639301193186</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639301193186</updated>
+    </task>
+    <task id="LOCAL-00003" summary="完成底层JPA向mybatis的改造&#10;添加部分学生相关功能">
+      <created>1639309263863</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639309263863</updated>
+    </task>
+    <task id="LOCAL-00004" summary="添加疫情模块&#10;疫情相关查询">
+      <created>1640492661039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640492661039</updated>
+    </task>
+    <task id="LOCAL-00005" summary="kafka实现异构通信">
+      <created>1640705135863</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640705135863</updated>
+    </task>
+    <task id="LOCAL-00006" summary="轨迹信息">
+      <created>1643784995223</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1643784995223</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,23 +272,159 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="config" />
-    <option name="LAST_COMMIT_MESSAGE" value="config" />
+    <MESSAGE value="entity and mapper.xml" />
+    <MESSAGE value="完成底层JPA向mybatis的改造&#10;添加部分学生相关功能" />
+    <MESSAGE value="添加疫情模块&#10;疫情相关查询" />
+    <MESSAGE value="kafka实现异构通信" />
+    <MESSAGE value="轨迹信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="轨迹信息" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="333" y="59" key="#Project_Structure" timestamp="1639276718816">
+    <state x="333" y="59" key="#Project_Structure" timestamp="1640693533186">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
-    <state x="333" y="59" key="#Project_Structure/0.25.1680.949@0.25.1680.949" timestamp="1639276718816" />
-    <state x="407" y="59" key="SettingsEditor" timestamp="1639276295755">
+    <state x="333" y="59" key="#Project_Structure/0.25.1680.949@0.25.1680.949" timestamp="1640693533186" />
+    <state x="658" y="191" key="#com.intellij.ide.util.MemberChooser" timestamp="1642588609625">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state x="658" y="191" key="#com.intellij.ide.util.MemberChooser/0.25.1680.947@0.25.1680.947" timestamp="1642588609625" />
+    <state x="658" y="191" key="#com.intellij.ide.util.MemberChooser/0.25.1680.949@0.25.1680.949" timestamp="1641121162650" />
+    <state x="239" y="489" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1639304099836">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
-    <state x="407" y="59" key="SettingsEditor/0.25.1680.949@0.25.1680.949" timestamp="1639276295755" />
-    <state x="519" y="218" key="Vcs.Push.Dialog.v2" timestamp="1639275867954">
+    <state x="239" y="489" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.25.1680.949@0.25.1680.949" timestamp="1639304099836" />
+    <state x="589" y="354" width="529" height="302" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1639300339745">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
-    <state x="519" y="218" key="Vcs.Push.Dialog.v2/0.25.1680.949@0.25.1680.949" timestamp="1639275867954" />
+    <state x="589" y="354" width="529" height="302" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.25.1680.949@0.25.1680.949" timestamp="1639300339745" />
+    <state x="480" y="243" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1640490236246">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state x="480" y="243" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1680.949@0.25.1680.949" timestamp="1640490236246" />
+    <state width="1193" height="493" key="GridCell.Tab.0.bottom" timestamp="1643877017542">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1193" height="314" key="GridCell.Tab.0.bottom/0.25.1680.946@0.25.1680.946" timestamp="1643279740002" />
+    <state width="1193" height="263" key="GridCell.Tab.0.bottom/0.25.1680.947@0.25.1680.947" timestamp="1643457455825" />
+    <state width="1193" height="493" key="GridCell.Tab.0.bottom/0.25.1680.949@0.25.1680.949" timestamp="1643877017542" />
+    <state width="1193" height="236" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1643163496678" />
+    <state width="1193" height="493" key="GridCell.Tab.0.center" timestamp="1643877017541">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1193" height="314" key="GridCell.Tab.0.center/0.25.1680.946@0.25.1680.946" timestamp="1643279740000" />
+    <state width="1193" height="263" key="GridCell.Tab.0.center/0.25.1680.947@0.25.1680.947" timestamp="1643457455824" />
+    <state width="1193" height="493" key="GridCell.Tab.0.center/0.25.1680.949@0.25.1680.949" timestamp="1643877017541" />
+    <state width="1193" height="236" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1643163496677" />
+    <state width="1193" height="493" key="GridCell.Tab.0.left" timestamp="1643877017541">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1193" height="314" key="GridCell.Tab.0.left/0.25.1680.946@0.25.1680.946" timestamp="1643279739999" />
+    <state width="1193" height="263" key="GridCell.Tab.0.left/0.25.1680.947@0.25.1680.947" timestamp="1643457455824" />
+    <state width="1193" height="493" key="GridCell.Tab.0.left/0.25.1680.949@0.25.1680.949" timestamp="1643877017541" />
+    <state width="1193" height="236" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1643163496677" />
+    <state width="1193" height="493" key="GridCell.Tab.0.right" timestamp="1643877017542">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1193" height="314" key="GridCell.Tab.0.right/0.25.1680.946@0.25.1680.946" timestamp="1643279740000" />
+    <state width="1193" height="263" key="GridCell.Tab.0.right/0.25.1680.947@0.25.1680.947" timestamp="1643457455824" />
+    <state width="1193" height="493" key="GridCell.Tab.0.right/0.25.1680.949@0.25.1680.949" timestamp="1643877017542" />
+    <state width="1193" height="236" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1643163496678" />
+    <state width="1193" height="493" key="GridCell.Tab.1.bottom" timestamp="1643877017543">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1193" height="314" key="GridCell.Tab.1.bottom/0.25.1680.946@0.25.1680.946" timestamp="1643279740004" />
+    <state width="1193" height="263" key="GridCell.Tab.1.bottom/0.25.1680.947@0.25.1680.947" timestamp="1643457455827" />
+    <state width="1193" height="493" key="GridCell.Tab.1.bottom/0.25.1680.949@0.25.1680.949" timestamp="1643877017543" />
+    <state width="1193" height="236" key="GridCell.Tab.1.bottom/0.25.1680.951@0.25.1680.951" timestamp="1643163496679" />
+    <state width="1193" height="493" key="GridCell.Tab.1.center" timestamp="1643877017542">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1193" height="314" key="GridCell.Tab.1.center/0.25.1680.946@0.25.1680.946" timestamp="1643279740002" />
+    <state width="1193" height="263" key="GridCell.Tab.1.center/0.25.1680.947@0.25.1680.947" timestamp="1643457455826" />
+    <state width="1193" height="493" key="GridCell.Tab.1.center/0.25.1680.949@0.25.1680.949" timestamp="1643877017542" />
+    <state width="1193" height="236" key="GridCell.Tab.1.center/0.25.1680.951@0.25.1680.951" timestamp="1643163496678" />
+    <state width="1193" height="493" key="GridCell.Tab.1.left" timestamp="1643877017542">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1193" height="314" key="GridCell.Tab.1.left/0.25.1680.946@0.25.1680.946" timestamp="1643279740002" />
+    <state width="1193" height="263" key="GridCell.Tab.1.left/0.25.1680.947@0.25.1680.947" timestamp="1643457455825" />
+    <state width="1193" height="493" key="GridCell.Tab.1.left/0.25.1680.949@0.25.1680.949" timestamp="1643877017542" />
+    <state width="1193" height="236" key="GridCell.Tab.1.left/0.25.1680.951@0.25.1680.951" timestamp="1643163496678" />
+    <state width="1193" height="493" key="GridCell.Tab.1.right" timestamp="1643877017542">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1193" height="314" key="GridCell.Tab.1.right/0.25.1680.946@0.25.1680.946" timestamp="1643279740003" />
+    <state width="1193" height="263" key="GridCell.Tab.1.right/0.25.1680.947@0.25.1680.947" timestamp="1643457455827" />
+    <state width="1193" height="493" key="GridCell.Tab.1.right/0.25.1680.949@0.25.1680.949" timestamp="1643877017542" />
+    <state width="1193" height="236" key="GridCell.Tab.1.right/0.25.1680.951@0.25.1680.951" timestamp="1643163496679" />
+    <state width="1193" height="228" key="GridCell.Tab.2.bottom" timestamp="1642591273914">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state width="1193" height="228" key="GridCell.Tab.2.bottom/0.25.1680.947@0.25.1680.947" timestamp="1642591273914" />
+    <state width="1088" height="191" key="GridCell.Tab.2.bottom/0.25.1680.949@0.25.1680.949" timestamp="1639786894388" />
+    <state width="1193" height="228" key="GridCell.Tab.2.center" timestamp="1642591273914">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state width="1193" height="228" key="GridCell.Tab.2.center/0.25.1680.947@0.25.1680.947" timestamp="1642591273914" />
+    <state width="1088" height="191" key="GridCell.Tab.2.center/0.25.1680.949@0.25.1680.949" timestamp="1639786894388" />
+    <state width="1193" height="228" key="GridCell.Tab.2.left" timestamp="1642591273913">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state width="1193" height="228" key="GridCell.Tab.2.left/0.25.1680.947@0.25.1680.947" timestamp="1642591273913" />
+    <state width="1088" height="191" key="GridCell.Tab.2.left/0.25.1680.949@0.25.1680.949" timestamp="1639786894388" />
+    <state width="1193" height="228" key="GridCell.Tab.2.right" timestamp="1642591273914">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state width="1193" height="228" key="GridCell.Tab.2.right/0.25.1680.947@0.25.1680.947" timestamp="1642591273914" />
+    <state width="1088" height="191" key="GridCell.Tab.2.right/0.25.1680.949@0.25.1680.949" timestamp="1639786894388" />
+    <state x="407" y="59" key="SettingsEditor" timestamp="1640590027076">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state x="407" y="59" key="SettingsEditor/0.25.1680.949@0.25.1680.949" timestamp="1640590027076" />
+    <state x="519" y="218" key="Vcs.Push.Dialog.v2" timestamp="1643784997308">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state x="519" y="218" key="Vcs.Push.Dialog.v2/0.25.1680.949@0.25.1680.949" timestamp="1643784997308" />
+    <state x="397" y="232" width="922" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1643279366112">
+      <screen x="0" y="25" width="1680" height="946" />
+    </state>
+    <state x="397" y="232" width="922" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1680.946@0.25.1680.946" timestamp="1643279366112" />
+    <state x="568" y="254" width="614" height="490" key="find.popup" timestamp="1642592649405">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state x="568" y="254" width="614" height="490" key="find.popup/0.25.1680.947@0.25.1680.947" timestamp="1642592649405" />
+    <state x="568" y="254" width="614" height="490" key="find.popup/0.25.1680.949@0.25.1680.949" timestamp="1641119734507" />
+    <state x="238" y="144" key="new project wizard" timestamp="1640406936779">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state x="238" y="144" key="new project wizard/0.25.1680.949@0.25.1680.949" timestamp="1640406936779" />
+    <state x="482" y="219" key="run.anything.popup" timestamp="1639306526883">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state x="482" y="219" key="run.anything.popup/0.25.1680.949@0.25.1680.949" timestamp="1639306526883" />
+    <state x="510" y="224" width="670" height="675" key="search.everywhere.popup" timestamp="1642580866605">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state x="510" y="224" width="670" height="675" key="search.everywhere.popup/0.25.1680.947@0.25.1680.947" timestamp="1642580866605" />
+    <state x="510" y="224" width="670" height="676" key="search.everywhere.popup/0.25.1680.949@0.25.1680.949" timestamp="1640490278659" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/student_service_center_back_end$CovidMain5001.ic" NAME="CovidMain5001 Coverage Results" MODIFIED="1642590126175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shu.ssc.*</FILTER>
+    </SUITE>
   </component>
 </project>
