@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shu.ssc.mapper.RealTimeWeiboMapper">
+  <resultMap id="BaseResultMap" type="com.shu.ssc.entity.covid.RealTimeWeibo">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="bid" jdbcType="VARCHAR" property="bid" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="screen_name" jdbcType="VARCHAR" property="screenName" />
+    <result column="text" jdbcType="VARCHAR" property="text" />
+    <result column="article_url" jdbcType="VARCHAR" property="articleUrl" />
+    <result column="topics" jdbcType="VARCHAR" property="topics" />
+    <result column="at_users" jdbcType="VARCHAR" property="atUsers" />
+    <result column="pics" jdbcType="VARCHAR" property="pics" />
+    <result column="video_url" jdbcType="VARCHAR" property="videoUrl" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="attitudes_count" jdbcType="INTEGER" property="attitudesCount" />
+    <result column="comments_count" jdbcType="INTEGER" property="commentsCount" />
+    <result column="reposts_count" jdbcType="INTEGER" property="repostsCount" />
+    <result column="retweet_id" jdbcType="VARCHAR" property="retweetId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, bid, user_id, screen_name, text, article_url, topics, at_users, pics, video_url, 
+    location, created_at, source, attitudes_count, comments_count, reposts_count, retweet_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from real_time_weibo
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from real_time_weibo
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.shu.ssc.entity.covid.RealTimeWeibo">
+    insert into real_time_weibo (id, bid, user_id, 
+      screen_name, text, article_url, 
+      topics, at_users, pics, 
+      video_url, location, created_at, 
+      source, attitudes_count, comments_count, 
+      reposts_count, retweet_id)
+    values (#{id,jdbcType=VARCHAR}, #{bid,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{screenName,jdbcType=VARCHAR}, #{text,jdbcType=VARCHAR}, #{articleUrl,jdbcType=VARCHAR}, 
+      #{topics,jdbcType=VARCHAR}, #{atUsers,jdbcType=VARCHAR}, #{pics,jdbcType=VARCHAR}, 
+      #{videoUrl,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, 
+      #{source,jdbcType=VARCHAR}, #{attitudesCount,jdbcType=INTEGER}, #{commentsCount,jdbcType=INTEGER}, 
+      #{repostsCount,jdbcType=INTEGER}, #{retweetId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shu.ssc.entity.covid.RealTimeWeibo">
+    insert into real_time_weibo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bid != null">
+        bid,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="screenName != null">
+        screen_name,
+      </if>
+      <if test="text != null">
+        text,
+      </if>
+      <if test="articleUrl != null">
+        article_url,
+      </if>
+      <if test="topics != null">
+        topics,
+      </if>
+      <if test="atUsers != null">
+        at_users,
+      </if>
+      <if test="pics != null">
+        pics,
+      </if>
+      <if test="videoUrl != null">
+        video_url,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="createdAt != null">
+        created_at,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="attitudesCount != null">
+        attitudes_count,
+      </if>
+      <if test="commentsCount != null">
+        comments_count,
+      </if>
+      <if test="repostsCount != null">
+        reposts_count,
+      </if>
+      <if test="retweetId != null">
+        retweet_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="bid != null">
+        #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="screenName != null">
+        #{screenName,jdbcType=VARCHAR},
+      </if>
+      <if test="text != null">
+        #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="articleUrl != null">
+        #{articleUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="topics != null">
+        #{topics,jdbcType=VARCHAR},
+      </if>
+      <if test="atUsers != null">
+        #{atUsers,jdbcType=VARCHAR},
+      </if>
+      <if test="pics != null">
+        #{pics,jdbcType=VARCHAR},
+      </if>
+      <if test="videoUrl != null">
+        #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null">
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="attitudesCount != null">
+        #{attitudesCount,jdbcType=INTEGER},
+      </if>
+      <if test="commentsCount != null">
+        #{commentsCount,jdbcType=INTEGER},
+      </if>
+      <if test="repostsCount != null">
+        #{repostsCount,jdbcType=INTEGER},
+      </if>
+      <if test="retweetId != null">
+        #{retweetId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shu.ssc.entity.covid.RealTimeWeibo">
+    update real_time_weibo
+    <set>
+      <if test="bid != null">
+        bid = #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="screenName != null">
+        screen_name = #{screenName,jdbcType=VARCHAR},
+      </if>
+      <if test="text != null">
+        text = #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="articleUrl != null">
+        article_url = #{articleUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="topics != null">
+        topics = #{topics,jdbcType=VARCHAR},
+      </if>
+      <if test="atUsers != null">
+        at_users = #{atUsers,jdbcType=VARCHAR},
+      </if>
+      <if test="pics != null">
+        pics = #{pics,jdbcType=VARCHAR},
+      </if>
+      <if test="videoUrl != null">
+        video_url = #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null">
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="attitudesCount != null">
+        attitudes_count = #{attitudesCount,jdbcType=INTEGER},
+      </if>
+      <if test="commentsCount != null">
+        comments_count = #{commentsCount,jdbcType=INTEGER},
+      </if>
+      <if test="repostsCount != null">
+        reposts_count = #{repostsCount,jdbcType=INTEGER},
+      </if>
+      <if test="retweetId != null">
+        retweet_id = #{retweetId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shu.ssc.entity.covid.RealTimeWeibo">
+    update real_time_weibo
+    set bid = #{bid,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      screen_name = #{screenName,jdbcType=VARCHAR},
+      text = #{text,jdbcType=VARCHAR},
+      article_url = #{articleUrl,jdbcType=VARCHAR},
+      topics = #{topics,jdbcType=VARCHAR},
+      at_users = #{atUsers,jdbcType=VARCHAR},
+      pics = #{pics,jdbcType=VARCHAR},
+      video_url = #{videoUrl,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      source = #{source,jdbcType=VARCHAR},
+      attitudes_count = #{attitudesCount,jdbcType=INTEGER},
+      comments_count = #{commentsCount,jdbcType=INTEGER},
+      reposts_count = #{repostsCount,jdbcType=INTEGER},
+      retweet_id = #{retweetId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

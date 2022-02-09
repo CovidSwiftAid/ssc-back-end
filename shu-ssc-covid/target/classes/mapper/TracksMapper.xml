@@ -65,5 +65,5 @@
 
     <select id="getAllTracks" resultType="com.shu.ssc.entity.covid.Tracks">
     select * from track_after_processing
-  </select>
+    </select>
 </mapper>
