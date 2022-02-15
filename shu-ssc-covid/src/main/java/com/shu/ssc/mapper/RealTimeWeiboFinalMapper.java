@@ -19,4 +19,6 @@ public interface RealTimeWeiboFinalMapper {
     int updateByPrimaryKeyWithBLOBs(RealTimeWeiboFinal record);
 
     int updateByPrimaryKey(RealTimeWeiboFinal record);
+
+    String getWeiboIDByText(String locationName);
 }

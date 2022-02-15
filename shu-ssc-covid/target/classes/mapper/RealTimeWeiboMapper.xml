@@ -231,4 +231,8 @@
       retweet_id = #{retweetId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="getSameDayWeibosByID" parameterType="java.lang.String" resultType="com.shu.ssc.entity.covid.RealTimeWeibo">
+    select * from real_time_weibo wb
+    where TO_DAYS(wb.created_at)= TO_DAYS((select created_at from real_time_weibo where id = #{wbID}))
+  </select>
 </mapper>

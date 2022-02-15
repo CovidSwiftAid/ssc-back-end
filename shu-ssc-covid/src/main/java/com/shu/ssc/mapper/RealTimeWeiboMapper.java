@@ -20,4 +20,5 @@ public interface RealTimeWeiboMapper {
 
     int updateByPrimaryKey(RealTimeWeibo record);
 
+    List<RealTimeWeibo> getSameDayWeibosByID(String wbID);
 }

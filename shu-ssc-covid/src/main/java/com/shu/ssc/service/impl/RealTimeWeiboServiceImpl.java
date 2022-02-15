@@ -7,9 +7,11 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shu.ssc.common.dto.RealTimeWeiboDto;
 import com.shu.ssc.dto.MapResponseDto;
+import com.shu.ssc.dto.SuspectedResultDto;
 import com.shu.ssc.entity.covid.*;
 import com.shu.ssc.mapper.RealTimeWeiboAfterProcessingMapper;
 import com.shu.ssc.mapper.RealTimeWeiboFinalMapper;
+import com.shu.ssc.mapper.RealTimeWeiboMapper;
 import com.shu.ssc.service.RealTimeWeiboService;
 import com.shu.ssc.service.TracksService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +22,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 /**
@@ -31,6 +34,9 @@ import java.util.Set;
 @Service
 public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
     public static final String ak = "3uRTECEK0CChcOWsegpKVoDoPcVtV5Tk";
+
+    @Resource
+    RealTimeWeiboMapper realTimeWeiboMapper;
 
     @Resource
     RestTemplate restTemplate;
@@ -193,5 +199,17 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
             // TODO:批量插入
             finalMapper.insert(f);
         }
+    }
+
+    @Override
+    public SuspectedResultDto getSuspectedResult(String locationName) {
+        Random r = new Random();
+        SuspectedResultDto dto = new SuspectedResultDto();
+        dto.setDiagnosisRate(r.nextDouble());
+        dto.setCloseRate(r.nextDouble());
+        String wbID = finalMapper.getWeiboIDByText(locationName);
+        List<RealTimeWeibo> weibos = realTimeWeiboMapper.getSameDayWeibosByID(wbID);
+        dto.setWeiboList(weibos);
+        return dto;
     }
 }

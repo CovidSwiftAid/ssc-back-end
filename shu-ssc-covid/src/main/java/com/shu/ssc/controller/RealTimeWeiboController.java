@@ -2,14 +2,12 @@ package com.shu.ssc.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.shu.ssc.common.result.Result;
+import com.shu.ssc.dto.SuspectedResultDto;
 import com.shu.ssc.service.RealTimeWeiboService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -48,5 +46,17 @@ public class RealTimeWeiboController {
         realTimeWeiboService.saveAllSuspectedLocations();
 //        PageHelper.startPage(pageNum, pageSize);
         return Result.success(realTimeWeiboService.getAllSuspectedLocationsInCoordinates());
+    }
+
+    @GetMapping("/getSuspectedResult")
+    @ApiOperation(value = "根据指定的疑似地点，返回相关信息")
+//	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+    @ResponseBody
+    public Result getSuspectedResult(@RequestParam String locationName) throws JsonProcessingException {
+//        log.info("getAllTracks(): 获取所有活动轨迹, 第" + pageNum + "页，每页大小" + pageSize);
+        log.info("getSuspectedResult(): 根据指定的疑似地点，返回相关信息");
+        SuspectedResultDto result = realTimeWeiboService.getSuspectedResult(locationName);
+//        PageHelper.startPage(pageNum, pageSize);
+        return Result.success(result);
     }
 }
