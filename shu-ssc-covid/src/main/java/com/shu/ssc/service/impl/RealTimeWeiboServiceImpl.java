@@ -101,17 +101,23 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
         // 再排除掉已有的
         // 时间复杂度很高，缓存起来比较好
         // TODO:放到redis里
+        List<String> finalRes = new ArrayList<>();
         List<String> already = tracksService.getAllTracks();
         for (String item : res) {
+            boolean exist = false;
             for (String al : already) {
                 if (al.contains(item)) {
-                    res.remove(item);
+//                    res.remove(item);
+                    exist = true;
                     break;
                 }
             }
+            if (!exist) {
+                finalRes.add(item);
+            }
         }
 
-        return res;
+        return finalRes;
     }
 
 
