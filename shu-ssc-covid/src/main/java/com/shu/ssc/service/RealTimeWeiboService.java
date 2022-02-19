@@ -1,8 +1,8 @@
 package com.shu.ssc.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.shu.ssc.dto.ReverseGeocodingDto;
 import com.shu.ssc.entity.covid.MapResponseEntity;
-import com.shu.ssc.entity.covid.RealTimeWeiboFinal;
 
 import java.util.List;
 
@@ -17,4 +17,6 @@ public interface RealTimeWeiboService {
     List<MapResponseEntity> getAllSuspectedLocationsInCoordinates() throws JsonProcessingException;
 
     void saveAllSuspectedLocations() throws JsonProcessingException;
+
+    ReverseGeocodingDto.Result getReverseGeocoding(Double lat, Double lng) throws JsonProcessingException;
 }

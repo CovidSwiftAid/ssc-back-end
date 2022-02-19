@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shu.ssc.common.dto.RealTimeWeiboDto;
 import com.shu.ssc.dto.MapResponseDto;
+import com.shu.ssc.dto.ReverseGeocodingDto;
 import com.shu.ssc.entity.covid.*;
 import com.shu.ssc.mapper.RealTimeWeiboAfterProcessingMapper;
 import com.shu.ssc.mapper.RealTimeWeiboFinalMapper;
@@ -193,5 +194,16 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
             // TODO:批量插入
             finalMapper.insert(f);
         }
+    }
+
+    @Override
+    public ReverseGeocodingDto.Result getReverseGeocoding(Double lat, Double lng) throws JsonProcessingException {
+        String url = "https://api.map.baidu.com/reverse_geocoding/v3/?location=" + lat + "," + lng + "&output=json&ak=" + ak;
+        ResponseEntity<String> re = restTemplate.getForEntity(url, String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//忽略未知字段
+        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);// 忽略字段大小写
+        ReverseGeocodingDto reverseGeocoding = mapper.readValue(re.getBody(), ReverseGeocodingDto.class);
+        return reverseGeocoding.getResult();
     }
 }

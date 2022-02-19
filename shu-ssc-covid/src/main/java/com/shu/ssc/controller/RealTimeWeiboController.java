@@ -1,15 +1,15 @@
 package com.shu.ssc.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.mysql.cj.util.StringUtils;
 import com.shu.ssc.common.result.Result;
+import com.shu.ssc.common.result.ResultCode;
+import com.shu.ssc.dto.ReverseGeocodingDto;
 import com.shu.ssc.service.RealTimeWeiboService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -48,5 +48,17 @@ public class RealTimeWeiboController {
         realTimeWeiboService.saveAllSuspectedLocations();
 //        PageHelper.startPage(pageNum, pageSize);
         return Result.success(realTimeWeiboService.getAllSuspectedLocationsInCoordinates());
+    }
+
+    @GetMapping("/getReverseGeocoding")
+    @ApiOperation(value = "逆地理编码,通过经纬度获取位置格式化信息")
+    @ResponseBody
+    public Result getReverseGeocoding(@RequestParam("lat") Double lat, @RequestParam("lng") Double lng) throws JsonProcessingException {
+        log.info("getReverseGeocoding(): 逆地理编码,通过经纬度获取位置格式化信息");
+        ReverseGeocodingDto.Result result = realTimeWeiboService.getReverseGeocoding(lat, lng);
+        if (StringUtils.isNullOrEmpty(result.getFormattedAddress()) || result.getAddressComponent() == null) {
+            return Result.failure(ResultCode.PARAM_IS_INVALID);
+        }
+        return Result.success(result.getAddressComponent());
     }
 }
