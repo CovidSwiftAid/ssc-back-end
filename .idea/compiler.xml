@@ -7,11 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="shu-ssc-gateway" />
         <module name="shu-ssc-covid" />
-        <module name="shu-ssc-auth-center" />
         <module name="shu-ssc-api-commons" />
-        <module name="shu-ssc-student-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

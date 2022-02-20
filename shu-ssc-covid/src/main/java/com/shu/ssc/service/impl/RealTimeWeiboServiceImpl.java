@@ -20,10 +20,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author oxotn3
@@ -53,7 +51,6 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
     @Override
     public List<String> getAllSuspectedLocations() {
         List<RealTimeWeiboAfterProcessing> trackList = afterProcessingMapper.getAllRealTimeWeiboAfterProcessing();
-
         List<String> res = new ArrayList<>();
         for (RealTimeWeiboAfterProcessing t : trackList) {
             String track = t.getText();
@@ -122,6 +119,7 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
                 finalRes.add(item);
             }
         }
+        finalRes = finalRes.stream().distinct().collect(Collectors.toList());
 
         return finalRes;
     }
@@ -207,9 +205,22 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
         SuspectedResultDto dto = new SuspectedResultDto();
         dto.setDiagnosisRate(r.nextDouble());
         dto.setCloseRate(r.nextDouble());
+        log.info("getSuspectedResult(): locationName{}", locationName);
         String wbID = finalMapper.getWeiboIDByText(locationName);
+        log.info("getSuspectedResult(): wbID{}", wbID);
         List<RealTimeWeibo> weibos = realTimeWeiboMapper.getSameDayWeibosByID(wbID);
-        dto.setWeiboList(weibos);
+        List<RealTimeWeibo> related = new ArrayList<>();
+        // 可能加了市字段，把市字段去掉再搜索
+        int pos = locationName.indexOf("市");
+        if (pos != -1 && pos < locationName.length() - 1) {
+            locationName = locationName.substring(pos + 1);
+        }
+        for (RealTimeWeibo wb : weibos) {
+            if (wb.getText().contains(locationName)) {
+                related.add(wb);
+            }
+        }
+        dto.setWeiboList(related);
         return dto;
     }
 }

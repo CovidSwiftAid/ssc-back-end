@@ -1,8 +1,9 @@
 package com.shu.ssc.entity.covid;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Data
+@EqualsAndHashCode
 public class RealTimeWeiboAfterProcessing {
     private Integer id;
 

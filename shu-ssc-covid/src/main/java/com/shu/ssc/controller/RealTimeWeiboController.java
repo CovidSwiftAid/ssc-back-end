@@ -43,7 +43,7 @@ public class RealTimeWeiboController {
     public Result getAllSuspectedLocationsInCoordinates() throws JsonProcessingException {
 //        log.info("getAllTracks(): 获取所有活动轨迹, 第" + pageNum + "页，每页大小" + pageSize);
         log.info("getAllSuspectedLocations(): 获取所有疑似地点，以经纬度形式");
-        realTimeWeiboService.saveAllSuspectedLocations();
+//        realTimeWeiboService.saveAllSuspectedLocations();
 //        PageHelper.startPage(pageNum, pageSize);
         return Result.success(realTimeWeiboService.getAllSuspectedLocationsInCoordinates());
     }
