@@ -1,6 +1,8 @@
 package com.shu.ssc.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.shu.ssc.dto.ReverseGeocodingDto;
+import com.shu.ssc.dto.SuspectedResultDto;
 import com.shu.ssc.entity.covid.MapResponseEntity;
 import com.shu.ssc.entity.covid.RealTimeWeiboFinal;
 

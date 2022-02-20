@@ -23,88 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77651a36-3c7d-49a3-b3c0-04c475b3ed40" name="Default Changelist" comment="轨迹信息">
-      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/covid/RealTimeWeiboAfterProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/covid/RealTimeWeiboAfterProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/shu-ssc-auth-center.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/AuthCenter20000.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/config/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/security/MyAuthenticationProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/security/MyAuthenticationToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/security/MyJWT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/security/MyJwtFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/security/SecurityUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/service/SecurityUserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/service/feignService/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/service/feignService/StudentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/service/feignService/TeacherService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/service/impl/SecurityUserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/java/com/shu/ssc/utils/JwtUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-auth-center/src/main/resources/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/controller/RealTimeWeiboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/controller/RealTimeWeiboController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/RealTimeWeiboService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/RealTimeWeiboService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/impl/RealTimeWeiboServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/impl/RealTimeWeiboServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper/RealTimeWeiboMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper/RealTimeWeiboMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/controller/RealTimeWeiboController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/controller/RealTimeWeiboController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/service/RealTimeWeiboService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/service/RealTimeWeiboService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/service/impl/RealTimeWeiboServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/service/impl/RealTimeWeiboServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/mapper/RealTimeWeiboMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/mapper/RealTimeWeiboMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-gateway/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-gateway/shu-ssc-gateway.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-gateway/src/main/java/com/shu/ssc/GatewayMain9527.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-gateway/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/shu-ssc-student-api.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/StudentApiMain80.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/controller/StudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/AdminMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/CommentAnalysisResultMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/CourseChapterMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/CourseChapterVideoMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/CourseCommentMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/CourseMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/CourseWatchRecordMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/HomeworkFileMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/HomeworkMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/ItemBasedCfMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/ItemBasedCfResultMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/LiveAddressMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/LiveMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/MajorMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/PreferMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/RelationshipStuPreferMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/StuLikeCommentMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/StuLikeCourseMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/StudentMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/TaskFileMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/TaskMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/mapper/TeacherMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/service/StudentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/java/com/shu/ssc/service/impl/StudentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/bootstrap.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/CommentAnalysisResultMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/CourseChapterMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/CourseChapterVideoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/CourseCommentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/CourseMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/CourseWatchRecordMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/HomeworkFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/HomeworkMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/ItemBasedCfMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/ItemBasedCfResultMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/LiveAddressMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/LiveMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/MajorMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/PreferMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/RelationshipStuPreferMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/StuLikeCommentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/StuLikeCourseMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/StudentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/TaskFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/TaskMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mapper/TeacherMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-student-api/src/main/resources/mybatis/mybatis-config.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,7 +249,7 @@
       <workItem from="1645094205701" duration="1384000" />
       <workItem from="1645096014001" duration="1409000" />
       <workItem from="1645194044704" duration="2158000" />
-      <workItem from="1645254006693" duration="2667000" />
+      <workItem from="1645254006693" duration="5126000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <created>1639273481315</created>
@@ -419,61 +343,61 @@
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state x="480" y="243" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1680.949@0.25.1680.949" timestamp="1640490236246" />
-    <state width="1178" height="402" key="GridCell.Tab.0.bottom" timestamp="1645320659295">
+    <state width="1178" height="390" key="GridCell.Tab.0.bottom" timestamp="1645326958692">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state width="1178" height="231" key="GridCell.Tab.0.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645254231527" />
     <state width="1178" height="252" key="GridCell.Tab.0.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645247520753" />
-    <state width="1178" height="402" key="GridCell.Tab.0.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645320659295" />
+    <state width="1178" height="390" key="GridCell.Tab.0.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645326958692" />
     <state width="1178" height="261" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1645083727743" />
-    <state width="1178" height="402" key="GridCell.Tab.0.center" timestamp="1645320659294">
+    <state width="1178" height="390" key="GridCell.Tab.0.center" timestamp="1645326958691">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state width="1178" height="231" key="GridCell.Tab.0.center/0.25.1680.946@0.25.1680.946" timestamp="1645254231525" />
     <state width="1178" height="252" key="GridCell.Tab.0.center/0.25.1680.947@0.25.1680.947" timestamp="1645247520752" />
-    <state width="1178" height="402" key="GridCell.Tab.0.center/0.25.1680.949@0.25.1680.949" timestamp="1645320659294" />
+    <state width="1178" height="390" key="GridCell.Tab.0.center/0.25.1680.949@0.25.1680.949" timestamp="1645326958691" />
     <state width="1178" height="261" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1645083727742" />
-    <state width="1178" height="402" key="GridCell.Tab.0.left" timestamp="1645320659294">
+    <state width="1178" height="390" key="GridCell.Tab.0.left" timestamp="1645326958691">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state width="1178" height="231" key="GridCell.Tab.0.left/0.25.1680.946@0.25.1680.946" timestamp="1645254231524" />
     <state width="1178" height="252" key="GridCell.Tab.0.left/0.25.1680.947@0.25.1680.947" timestamp="1645247520752" />
-    <state width="1178" height="402" key="GridCell.Tab.0.left/0.25.1680.949@0.25.1680.949" timestamp="1645320659294" />
+    <state width="1178" height="390" key="GridCell.Tab.0.left/0.25.1680.949@0.25.1680.949" timestamp="1645326958691" />
     <state width="1178" height="261" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1645083727741" />
-    <state width="1178" height="402" key="GridCell.Tab.0.right" timestamp="1645320659295">
+    <state width="1178" height="390" key="GridCell.Tab.0.right" timestamp="1645326958692">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state width="1178" height="231" key="GridCell.Tab.0.right/0.25.1680.946@0.25.1680.946" timestamp="1645254231526" />
     <state width="1178" height="252" key="GridCell.Tab.0.right/0.25.1680.947@0.25.1680.947" timestamp="1645247520753" />
-    <state width="1178" height="402" key="GridCell.Tab.0.right/0.25.1680.949@0.25.1680.949" timestamp="1645320659295" />
+    <state width="1178" height="390" key="GridCell.Tab.0.right/0.25.1680.949@0.25.1680.949" timestamp="1645326958692" />
     <state width="1178" height="261" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1645083727742" />
-    <state width="1178" height="402" key="GridCell.Tab.1.bottom" timestamp="1645320659297">
+    <state width="1178" height="390" key="GridCell.Tab.1.bottom" timestamp="1645326958696">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state width="1178" height="231" key="GridCell.Tab.1.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645254231529" />
     <state width="1178" height="252" key="GridCell.Tab.1.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645247520755" />
-    <state width="1178" height="402" key="GridCell.Tab.1.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645320659297" />
+    <state width="1178" height="390" key="GridCell.Tab.1.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645326958696" />
     <state width="1178" height="261" key="GridCell.Tab.1.bottom/0.25.1680.951@0.25.1680.951" timestamp="1645083727747" />
-    <state width="1178" height="402" key="GridCell.Tab.1.center" timestamp="1645320659296">
+    <state width="1178" height="390" key="GridCell.Tab.1.center" timestamp="1645326958694">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state width="1178" height="231" key="GridCell.Tab.1.center/0.25.1680.946@0.25.1680.946" timestamp="1645254231528" />
     <state width="1178" height="252" key="GridCell.Tab.1.center/0.25.1680.947@0.25.1680.947" timestamp="1645247520754" />
-    <state width="1178" height="402" key="GridCell.Tab.1.center/0.25.1680.949@0.25.1680.949" timestamp="1645320659296" />
+    <state width="1178" height="390" key="GridCell.Tab.1.center/0.25.1680.949@0.25.1680.949" timestamp="1645326958694" />
     <state width="1178" height="261" key="GridCell.Tab.1.center/0.25.1680.951@0.25.1680.951" timestamp="1645083727744" />
-    <state width="1178" height="402" key="GridCell.Tab.1.left" timestamp="1645320659296">
+    <state width="1178" height="390" key="GridCell.Tab.1.left" timestamp="1645326958693">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state width="1178" height="231" key="GridCell.Tab.1.left/0.25.1680.946@0.25.1680.946" timestamp="1645254231527" />
     <state width="1178" height="252" key="GridCell.Tab.1.left/0.25.1680.947@0.25.1680.947" timestamp="1645247520753" />
-    <state width="1178" height="402" key="GridCell.Tab.1.left/0.25.1680.949@0.25.1680.949" timestamp="1645320659296" />
+    <state width="1178" height="390" key="GridCell.Tab.1.left/0.25.1680.949@0.25.1680.949" timestamp="1645326958693" />
     <state width="1178" height="261" key="GridCell.Tab.1.left/0.25.1680.951@0.25.1680.951" timestamp="1645083727743" />
-    <state width="1178" height="402" key="GridCell.Tab.1.right" timestamp="1645320659296">
+    <state width="1178" height="390" key="GridCell.Tab.1.right" timestamp="1645326958695">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state width="1178" height="231" key="GridCell.Tab.1.right/0.25.1680.946@0.25.1680.946" timestamp="1645254231528" />
     <state width="1178" height="252" key="GridCell.Tab.1.right/0.25.1680.947@0.25.1680.947" timestamp="1645247520754" />
-    <state width="1178" height="402" key="GridCell.Tab.1.right/0.25.1680.949@0.25.1680.949" timestamp="1645320659296" />
+    <state width="1178" height="390" key="GridCell.Tab.1.right/0.25.1680.949@0.25.1680.949" timestamp="1645326958695" />
     <state width="1178" height="261" key="GridCell.Tab.1.right/0.25.1680.951@0.25.1680.951" timestamp="1645083727747" />
     <state width="1178" height="394" key="GridCell.Tab.2.bottom" timestamp="1644986997751">
       <screen x="0" y="25" width="1680" height="949" />
@@ -495,16 +419,28 @@
     </state>
     <state width="1193" height="228" key="GridCell.Tab.2.right/0.25.1680.947@0.25.1680.947" timestamp="1642591273914" />
     <state width="1178" height="394" key="GridCell.Tab.2.right/0.25.1680.949@0.25.1680.949" timestamp="1644986997751" />
+    <state x="208" y="56" key="MergeDialog" timestamp="1645326519423">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="208" y="56" key="MergeDialog/0.25.1680.951@0.25.1680.951" timestamp="1645326519423" />
+    <state x="242" y="235" width="1024" height="469" key="MultipleFileMergeDialog" timestamp="1645326519502">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="242" y="235" width="1024" height="469" key="MultipleFileMergeDialog/0.25.1680.951@0.25.1680.951" timestamp="1645326519502" />
     <state x="407" y="59" key="SettingsEditor" timestamp="1645194066301">
       <screen x="0" y="25" width="1680" height="947" />
     </state>
     <state x="407" y="59" key="SettingsEditor/0.25.1680.947@0.25.1680.947" timestamp="1645194066301" />
     <state x="407" y="59" key="SettingsEditor/0.25.1680.949@0.25.1680.949" timestamp="1640590027076" />
-    <state x="519" y="217" key="Vcs.Push.Dialog.v2" timestamp="1644375399321">
-      <screen x="0" y="25" width="1680" height="946" />
+    <state x="441" y="210" key="Vcs.Push.Dialog.v2" timestamp="1645321251171">
+      <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state x="519" y="217" key="Vcs.Push.Dialog.v2/0.25.1680.946@0.25.1680.946" timestamp="1644375399321" />
-    <state x="519" y="218" key="Vcs.Push.Dialog.v2/0.25.1680.949@0.25.1680.949" timestamp="1643784997308" />
+    <state x="441" y="210" key="Vcs.Push.Dialog.v2/0.25.1680.949@0.25.1680.949" timestamp="1645321251171" />
+    <state x="649" y="410" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1645326309818">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="649" y="410" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1680.951@0.25.1680.951" timestamp="1645326309818" />
     <state x="397" y="232" width="922" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1643279366112">
       <screen x="0" y="25" width="1680" height="946" />
     </state>

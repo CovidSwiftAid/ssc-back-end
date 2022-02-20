@@ -7,9 +7,12 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shu.ssc.common.dto.RealTimeWeiboDto;
 import com.shu.ssc.dto.MapResponseDto;
+import com.shu.ssc.dto.ReverseGeocodingDto;
+import com.shu.ssc.dto.SuspectedResultDto;
 import com.shu.ssc.entity.covid.*;
 import com.shu.ssc.mapper.RealTimeWeiboAfterProcessingMapper;
 import com.shu.ssc.mapper.RealTimeWeiboFinalMapper;
+import com.shu.ssc.mapper.RealTimeWeiboMapper;
 import com.shu.ssc.service.RealTimeWeiboService;
 import com.shu.ssc.service.TracksService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +23,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 /**
@@ -43,6 +47,9 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
 
     @Resource
     RealTimeWeiboFinalMapper finalMapper;
+
+    @Resource
+    RealTimeWeiboMapper realTimeWeiboMapper;
 
     @Override
     public List<String> getAllSuspectedLocations() {
