@@ -3,3 +3,12 @@
 /shu-ssc-auth-center/target/
 /shu-ssc-gateway/target/
 /shu-ssc-student-api/target/
+
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
