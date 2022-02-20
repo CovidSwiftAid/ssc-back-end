@@ -7,11 +7,9 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shu.ssc.common.dto.RealTimeWeiboDto;
 import com.shu.ssc.dto.MapResponseDto;
-import com.shu.ssc.dto.SuspectedResultDto;
 import com.shu.ssc.entity.covid.*;
 import com.shu.ssc.mapper.RealTimeWeiboAfterProcessingMapper;
 import com.shu.ssc.mapper.RealTimeWeiboFinalMapper;
-import com.shu.ssc.mapper.RealTimeWeiboMapper;
 import com.shu.ssc.service.RealTimeWeiboService;
 import com.shu.ssc.service.TracksService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +18,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author oxotn3
@@ -32,9 +31,6 @@ import java.util.stream.Collectors;
 @Service
 public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
     public static final String ak = "3uRTECEK0CChcOWsegpKVoDoPcVtV5Tk";
-
-    @Resource
-    RealTimeWeiboMapper realTimeWeiboMapper;
 
     @Resource
     RestTemplate restTemplate;
@@ -51,6 +47,7 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
     @Override
     public List<String> getAllSuspectedLocations() {
         List<RealTimeWeiboAfterProcessing> trackList = afterProcessingMapper.getAllRealTimeWeiboAfterProcessing();
+
         List<String> res = new ArrayList<>();
         for (RealTimeWeiboAfterProcessing t : trackList) {
             String track = t.getText();
@@ -119,7 +116,6 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
                 finalRes.add(item);
             }
         }
-        finalRes = finalRes.stream().distinct().collect(Collectors.toList());
 
         return finalRes;
     }
@@ -197,6 +193,17 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
             // TODO:批量插入
             finalMapper.insert(f);
         }
+    }
+
+    @Override
+    public ReverseGeocodingDto.Result getReverseGeocoding(Double lat, Double lng) throws JsonProcessingException {
+        String url = "https://api.map.baidu.com/reverse_geocoding/v3/?location=" + lat + "," + lng + "&output=json&ak=" + ak;
+        ResponseEntity<String> re = restTemplate.getForEntity(url, String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//忽略未知字段
+        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);// 忽略字段大小写
+        ReverseGeocodingDto reverseGeocoding = mapper.readValue(re.getBody(), ReverseGeocodingDto.class);
+        return reverseGeocoding.getResult();
     }
 
     @Override
