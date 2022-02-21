@@ -1,5 +1,8 @@
 package com.shu.ssc.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.nacos.common.utils.ConcurrentHashSet;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -8,6 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shu.ssc.common.dto.RealTimeWeiboDto;
 import com.shu.ssc.dto.MapResponseDto;
 import com.shu.ssc.dto.ReverseGeocodingDto;
+import com.shu.ssc.dto.SimpleWeiboDto;
 import com.shu.ssc.dto.SuspectedResultDto;
 import com.shu.ssc.entity.covid.*;
 import com.shu.ssc.mapper.RealTimeWeiboAfterProcessingMapper;
@@ -54,77 +58,82 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
     @Override
     public List<String> getAllSuspectedLocations() {
         List<RealTimeWeiboAfterProcessing> trackList = afterProcessingMapper.getAllRealTimeWeiboAfterProcessing();
+//
+//        List<String> res = new ArrayList<>();
+//        for (RealTimeWeiboAfterProcessing t : trackList) {
+//            String track = t.getText();
+//            Set<String> locations = new ConcurrentHashSet<>();
+//            String[] locs = track.substring(1, track.length() - 1).split(",");
+//            String city = null;
+//            for (String l : locs) {
+//                String after = l.replaceAll("\'", "").trim();
+//                // 记录市名
+//                if (after.charAt(after.length() - 1) == '市') {
+//                    if (city == null) city = after;
+//                    continue;
+//                }
+//                // 排除一些不正确的/太模糊的
+//                if (after.length() < 3 || after.contains("#") || after.contains("病例") || after.contains("阳性") || after.contains("报告") || after.contains("疫情")) continue;
+//                if (locations.isEmpty()) {
+//                    locations.add(after);
+//                    continue;
+//                }
+//                boolean add = true;
+//                for (String exist : locations) {
+//                    if (exist.contains(after)) {
+//                        if (exist.length() >= after.length()) {
+//                            // 已经有更详细的，不加
+//                            add = false;
+//                            break;
+//                        } else {
+//                            // 当前更详细，更新
+//                            locations.remove(exist);
+//                            locations.add(after);
+//                            break;
+//                        }
+//                    } else {
+//                        continue;
+//                    }
+//                }
+//                if (add) {
+//                    locations.add(after);
+//                }
+//            }
+//            for (String l : locations) {
+//                if (city != null && !l.contains(city)) {
+//                    // 加上市名
+//                    l = city + l;
+//                }
+//                res.add(l);
+////                System.out.print(l + ", ");
+//            }
+//        }
 
+//        // 再排除掉已有的
+//        // 时间复杂度很高，缓存起来比较好
+//        // TODO:放到redis里
+//        List<String> finalRes = new ArrayList<>();
+//        List<String> already = tracksService.getAllTracks();
+//        for (String item : res) {
+//            boolean exist = false;
+//            for (String al : already) {
+//                if (al.contains(item)) {
+////                    res.remove(item);
+//                    exist = true;
+//                    break;
+//                }
+//            }
+//            if (!exist) {
+//                finalRes.add(item);
+//            }
+//        }
+
+//        return finalRes;
         List<String> res = new ArrayList<>();
-        for (RealTimeWeiboAfterProcessing t : trackList) {
-            String track = t.getText();
-            Set<String> locations = new ConcurrentHashSet<>();
-            String[] locs = track.substring(1, track.length() - 1).split(",");
-            String city = null;
-            for (String l : locs) {
-                String after = l.replaceAll("\'", "").trim();
-                // 记录市名
-                if (after.charAt(after.length() - 1) == '市') {
-                    if (city == null) city = after;
-                    continue;
-                }
-                // 排除一些不正确的/太模糊的
-                if (after.length() < 3 || after.contains("#") || after.contains("病例") || after.contains("阳性") || after.contains("报告") || after.contains("疫情")) continue;
-                if (locations.isEmpty()) {
-                    locations.add(after);
-                    continue;
-                }
-                boolean add = true;
-                for (String exist : locations) {
-                    if (exist.contains(after)) {
-                        if (exist.length() >= after.length()) {
-                            // 已经有更详细的，不加
-                            add = false;
-                            break;
-                        } else {
-                            // 当前更详细，更新
-                            locations.remove(exist);
-                            locations.add(after);
-                            break;
-                        }
-                    } else {
-                        continue;
-                    }
-                }
-                if (add) {
-                    locations.add(after);
-                }
-            }
-            for (String l : locations) {
-                if (city != null && !l.contains(city)) {
-                    // 加上市名
-                    l = city + l;
-                }
-                res.add(l);
-//                System.out.print(l + ", ");
-            }
+        for (RealTimeWeiboAfterProcessing wb : trackList) {
+            res.add(wb.getPlace());
         }
-
-        // 再排除掉已有的
-        // 时间复杂度很高，缓存起来比较好
-        // TODO:放到redis里
-        List<String> finalRes = new ArrayList<>();
-        List<String> already = tracksService.getAllTracks();
-        for (String item : res) {
-            boolean exist = false;
-            for (String al : already) {
-                if (al.contains(item)) {
-//                    res.remove(item);
-                    exist = true;
-                    break;
-                }
-            }
-            if (!exist) {
-                finalRes.add(item);
-            }
-        }
-
-        return finalRes;
+        return res;
     }
 
 
@@ -154,52 +163,52 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
 
     @Override
     public void saveAllSuspectedLocations() throws JsonProcessingException {
-        List<MapResponseEntity> res = getAllSuspectedLocationsInCoordinates();
-        List<String> valid = new ArrayList<>();
-        for (MapResponseEntity item : res) {
-//            System.out.println(item.locationName + ",  " + item.mapResponseDto.getStatus());
-            if (item.mapResponseDto.getStatus() == 0) {
-                // 找到，说明没有问题
-                valid.add(item.locationName);
-            } else {
-                log.info("saveAllSuspectedLocations(): 调用百度地图api未找到地点 {} ，可能有误", item.locationName);
-            }
-        }
-
-        List<RealTimeWeiboAfterProcessing> trackList = afterProcessingMapper.getAllRealTimeWeiboAfterProcessing();
-        List<RealTimeWeiboDto> saveList = new ArrayList<>();
-        for (String item : valid) {
-            RealTimeWeiboDto dto = new RealTimeWeiboDto();
-            dto.setText(item);
-            int city = item.indexOf("市");
-            if (city != -1) {
-                // 可能加了市字段，把市字段去掉
-                item = item.substring(city + 1);
-            }
-            for (RealTimeWeiboAfterProcessing afp : trackList) {
-                if (afp.getText().contains(item)) {
-                    dto.setWeiboId(afp.getWeiboId());
-                    dto.setUserId(afp.getUserId());
-                    saveList.add(dto);
-                    break;
-                }
-            }
-        }
-
-//        for (RealTimeWeiboDto dto : saveList) {
-//            System.out.println(dto.getWeiboId());
-//            System.out.println(dto.getUserId());
-//            System.out.println(dto.getText());
+//        List<MapResponseEntity> res = getAllSuspectedLocationsInCoordinates();
+//        List<String> valid = new ArrayList<>();
+//        for (MapResponseEntity item : res) {
+////            System.out.println(item.locationName + ",  " + item.mapResponseDto.getStatus());
+//            if (item.mapResponseDto.getStatus() == 0) {
+//                // 找到，说明没有问题
+//                valid.add(item.locationName);
+//            } else {
+//                log.info("saveAllSuspectedLocations(): 调用百度地图api未找到地点 {} ，可能有误", item.locationName);
+//            }
 //        }
-//         保存
-        for (RealTimeWeiboDto dto : saveList) {
-            RealTimeWeiboFinal f = new RealTimeWeiboFinal();
-            f.setWeiboId(dto.getWeiboId());
-            f.setUserId(dto.getUserId());
-            f.setText(dto.getText());
-            // TODO:批量插入
-            finalMapper.insert(f);
-        }
+//
+//        List<RealTimeWeiboAfterProcessing> trackList = afterProcessingMapper.getAllRealTimeWeiboAfterProcessing();
+//        List<RealTimeWeiboDto> saveList = new ArrayList<>();
+//        for (String item : valid) {
+//            RealTimeWeiboDto dto = new RealTimeWeiboDto();
+//            dto.setText(item);
+//            int city = item.indexOf("市");
+//            if (city != -1) {
+//                // 可能加了市字段，把市字段去掉
+//                item = item.substring(city + 1);
+//            }
+//            for (RealTimeWeiboAfterProcessing afp : trackList) {
+//                if (afp.getText().contains(item)) {
+//                    dto.setWeiboId(afp.getWeiboId());
+//                    dto.setUserId(afp.getUserId());
+//                    saveList.add(dto);
+//                    break;
+//                }
+//            }
+//        }
+//
+////        for (RealTimeWeiboDto dto : saveList) {
+////            System.out.println(dto.getWeiboId());
+////            System.out.println(dto.getUserId());
+////            System.out.println(dto.getText());
+////        }
+////         保存
+//        for (RealTimeWeiboDto dto : saveList) {
+//            RealTimeWeiboFinal f = new RealTimeWeiboFinal();
+//            f.setWeiboId(dto.getWeiboId());
+//            f.setUserId(dto.getUserId());
+//            f.setText(dto.getText());
+//            // TODO:批量插入
+//            finalMapper.insert(f);
+//        }
     }
 
     @Override
@@ -215,26 +224,23 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
 
     @Override
     public SuspectedResultDto getSuspectedResult(String locationName) {
-        Random r = new Random();
+        RealTimeWeiboAfterProcessing wb = afterProcessingMapper.getWeiboByLocationName(locationName);
         SuspectedResultDto dto = new SuspectedResultDto();
-        dto.setDiagnosisRate(r.nextDouble());
-        dto.setCloseRate(r.nextDouble());
-        log.info("getSuspectedResult(): locationName{}", locationName);
-        String wbID = finalMapper.getWeiboIDByText(locationName);
-        log.info("getSuspectedResult(): wbID{}", wbID);
-        List<RealTimeWeibo> weibos = realTimeWeiboMapper.getSameDayWeibosByID(wbID);
-        List<RealTimeWeibo> related = new ArrayList<>();
-        // 可能加了市字段，把市字段去掉再搜索
-        int pos = locationName.indexOf("市");
-        if (pos != -1 && pos < locationName.length() - 1) {
-            locationName = locationName.substring(pos + 1);
+        dto.setDiagnosisRate(Double.parseDouble(wb.getPositiveRate()));
+        dto.setCloseRate(Double.parseDouble(wb.getClosedRate()));
+        List<RealTimeWeibo> weibos = new ArrayList<>();
+        List<SimpleWeiboDto> simple = JSONObject.parseArray(wb.getText(), SimpleWeiboDto.class);
+        for (SimpleWeiboDto d : simple) {
+            RealTimeWeibo cur = new RealTimeWeibo();
+//            log.info("date:" + d.getCreatedAt());
+            cur.setScreenName(d.getUserName());
+            cur.setCreatedAt(d.getCreatedAt());
+            cur.setText(d.getWeiboText());
+            weibos.add(cur);
         }
-        for (RealTimeWeibo wb : weibos) {
-            if (wb.getText().contains(locationName)) {
-                related.add(wb);
-            }
-        }
-        dto.setWeiboList(related);
+        dto.setWeiboList(weibos);
         return dto;
     }
+
+
 }

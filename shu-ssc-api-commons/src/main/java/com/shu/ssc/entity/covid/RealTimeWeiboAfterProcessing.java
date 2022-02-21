@@ -1,15 +1,16 @@
 package com.shu.ssc.entity.covid;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode
+@Data
 public class RealTimeWeiboAfterProcessing {
     private Integer id;
 
-    private String weiboId;
+    private String place;
 
-    private String userId;
+    private String closedRate;
+
+    private String positiveRate;
 
     private String text;
 
@@ -21,20 +22,28 @@ public class RealTimeWeiboAfterProcessing {
         this.id = id;
     }
 
-    public String getWeiboId() {
-        return weiboId;
+    public String getPlace() {
+        return place;
     }
 
-    public void setWeiboId(String weiboId) {
-        this.weiboId = weiboId;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getClosedRate() {
+        return closedRate;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setClosedRate(String closedRate) {
+        this.closedRate = closedRate;
+    }
+
+    public String getPositiveRate() {
+        return positiveRate;
+    }
+
+    public void setPositiveRate(String positiveRate) {
+        this.positiveRate = positiveRate;
     }
 
     public String getText() {

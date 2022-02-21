@@ -33,26 +33,26 @@ public class CovidInfoConsumer {
 
     public static final long ExpireTime = 24 * 60 * 60;  // 24小时过期
 
-    @KafkaListener(topics = "ssc_covid_weiboCCTVNews", groupId = "ssc_covid_weiboCCTVNews")
-    public void updateWeiboCCTVNews(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
-        Optional message = Optional.ofNullable(record.value());
-        if (message.isPresent()) {
-            Object msg = message.get();
-            log.info("CovidInfoConsumer 消费了 Topic:" + topic + ", Message:" + msg);
-            ack.acknowledge();
-
-            if (redisUtil.hasKey(CovidInfoKeys.WeiboCCTVNewsKey.getKey())) {
-                redisUtil.del(CovidInfoKeys.WeiboCCTVNewsKey.getKey());
-                log.info("redis中 WeiboCCTVNews 未过期，已删除");
-            }
-            List<WeiboCCTVNews> weiboCCTVNewsList = weiboCCTVNewsService.getAllWeiboCCTVNews();
-            // 缓存到redis中
-            redisUtil.set(CovidInfoKeys.WeiboCCTVNewsKey.getKey(), weiboCCTVNewsList, ExpireTime);
-            log.info("redis中 WeiboCCTVNews 已更新");
-        } else {
-            log.error("updateWeiboCCTVNews() error!");
-        }
-    }
+//    @KafkaListener(topics = "ssc_covid_weiboCCTVNews", groupId = "ssc_covid_weiboCCTVNews")
+//    public void updateWeiboCCTVNews(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
+//        Optional message = Optional.ofNullable(record.value());
+//        if (message.isPresent()) {
+//            Object msg = message.get();
+//            log.info("CovidInfoConsumer 消费了 Topic:" + topic + ", Message:" + msg);
+//            ack.acknowledge();
+//
+//            if (redisUtil.hasKey(CovidInfoKeys.WeiboCCTVNewsKey.getKey())) {
+//                redisUtil.del(CovidInfoKeys.WeiboCCTVNewsKey.getKey());
+//                log.info("redis中 WeiboCCTVNews 未过期，已删除");
+//            }
+//            List<WeiboCCTVNews> weiboCCTVNewsList = weiboCCTVNewsService.getAllWeiboCCTVNews();
+//            // 缓存到redis中
+//            redisUtil.set(CovidInfoKeys.WeiboCCTVNewsKey.getKey(), weiboCCTVNewsList, ExpireTime);
+//            log.info("redis中 WeiboCCTVNews 已更新");
+//        } else {
+//            log.error("updateWeiboCCTVNews() error!");
+//        }
+//    }
 
 
 

@@ -23,12 +23,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77651a36-3c7d-49a3-b3c0-04c475b3ed40" name="Default Changelist" comment="轨迹信息">
+      <change afterPath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/dto/SimpleWeiboDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/covid/RiskPlace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/mapper/RiskPlaceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/RiskPlaceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/impl/RiskPlaceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper/RiskPlaceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/CommentAnalysisResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/CourseChapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/CourseChapterVideo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/CourseComment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/CourseWatchRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Homework.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/HomeworkFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/ItemBasedCf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/ItemBasedCfResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Live.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/LiveAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Major.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Prefer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/RelationshipStuPrefer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/StuLikeComment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/StuLikeCourse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/TaskFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/covid/RealTimeWeiboAfterProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/covid/RealTimeWeiboAfterProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/shu-ssc-covid.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/shu-ssc-covid.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/controller/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/controller/NewsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/controller/RealTimeWeiboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/controller/RealTimeWeiboController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/controller/TrackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/controller/TrackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/kafka/CovidInfoConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/kafka/CovidInfoConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/mapper/RealTimeWeiboAfterProcessingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/mapper/RealTimeWeiboAfterProcessingMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/RealTimeWeiboService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/RealTimeWeiboService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/impl/RealTimeWeiboServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/java/com/shu/ssc/service/impl/RealTimeWeiboServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper/RealTimeWeiboAfterProcessingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper/RealTimeWeiboAfterProcessingMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/controller/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/controller/NewsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/controller/RealTimeWeiboController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/controller/RealTimeWeiboController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/service/RealTimeWeiboService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/service/RealTimeWeiboService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/controller/TrackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/controller/TrackController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/kafka/CovidInfoConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/kafka/CovidInfoConsumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/mapper/RealTimeWeiboAfterProcessingMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/mapper/RealTimeWeiboAfterProcessingMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/service/impl/RealTimeWeiboServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/com/shu/ssc/service/impl/RealTimeWeiboServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu-ssc-covid/target/classes/mapper/RealTimeWeiboAfterProcessingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shu-ssc-covid/target/classes/mapper/RealTimeWeiboAfterProcessingMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,17 +112,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.25316453" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/shu-ssc-api-commons/src/main/java/com/shu/ssc/entity/covid" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.shu.ssc.mapper" />
+      <recent name="com.shu.ssc.entity.covid" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/mapper" />
       <recent name="$PROJECT_DIR$/shu-ssc-covid/src/main/resources/python" />
@@ -137,19 +190,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthCenter20000" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="shu-ssc-auth-center" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shu.ssc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shu.ssc.AuthCenter20000" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CovidMain5001" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="shu-ssc-covid" />
       <extension name="coverage">
@@ -163,26 +203,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudentApiMain80" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="shu-ssc-student-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shu.ssc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shu.ssc.StudentApiMain80" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.CovidMain5001" />
         <item itemvalue="JUnit.TracksServiceImpl.test" />
         <item itemvalue="JUnit.TracksServiceImpl.getAllTracks" />
-        <item itemvalue="Spring Boot.StudentApiMain80" />
-        <item itemvalue="Spring Boot.AuthCenter20000" />
       </list>
     </recent_temporary>
   </component>
@@ -250,6 +275,8 @@
       <workItem from="1645096014001" duration="1409000" />
       <workItem from="1645194044704" duration="2158000" />
       <workItem from="1645254006693" duration="5126000" />
+      <workItem from="1645425195311" duration="1048000" />
+      <workItem from="1645426397689" duration="9844000" />
     </task>
     <task id="LOCAL-00001" summary="config">
       <created>1639273481315</created>
@@ -326,10 +353,11 @@
     </state>
     <state x="333" y="59" key="#Project_Structure/0.25.1680.947@0.25.1680.947" timestamp="1645263447767" />
     <state x="333" y="59" key="#Project_Structure/0.25.1680.949@0.25.1680.949" timestamp="1640693533186" />
-    <state x="658" y="191" key="#com.intellij.ide.util.MemberChooser" timestamp="1644920571809">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state x="658" y="191" key="#com.intellij.ide.util.MemberChooser" timestamp="1645442851162">
+      <screen x="0" y="25" width="1680" height="947" />
     </state>
-    <state x="658" y="191" key="#com.intellij.ide.util.MemberChooser/0.25.1680.947@0.25.1680.947" timestamp="1644409838618" />
+    <state x="658" y="190" key="#com.intellij.ide.util.MemberChooser/0.25.1680.946@0.25.1680.946" timestamp="1645436698120" />
+    <state x="658" y="191" key="#com.intellij.ide.util.MemberChooser/0.25.1680.947@0.25.1680.947" timestamp="1645442851162" />
     <state x="658" y="191" key="#com.intellij.ide.util.MemberChooser/0.25.1680.949@0.25.1680.949" timestamp="1644920571809" />
     <state x="239" y="489" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1639304099836">
       <screen x="0" y="25" width="1680" height="949" />
@@ -343,60 +371,60 @@
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state x="480" y="243" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1680.949@0.25.1680.949" timestamp="1640490236246" />
-    <state width="1178" height="390" key="GridCell.Tab.0.bottom" timestamp="1645326958692">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state width="1233" height="127" key="GridCell.Tab.0.bottom" timestamp="1645443210287">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state width="1178" height="231" key="GridCell.Tab.0.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645254231527" />
-    <state width="1178" height="252" key="GridCell.Tab.0.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645247520753" />
+    <state width="1233" height="127" key="GridCell.Tab.0.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645443210287" />
+    <state width="1233" height="274" key="GridCell.Tab.0.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645443020088" />
     <state width="1178" height="390" key="GridCell.Tab.0.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645326958692" />
     <state width="1178" height="261" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1645083727743" />
-    <state width="1178" height="390" key="GridCell.Tab.0.center" timestamp="1645326958691">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state width="1233" height="127" key="GridCell.Tab.0.center" timestamp="1645443210286">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state width="1178" height="231" key="GridCell.Tab.0.center/0.25.1680.946@0.25.1680.946" timestamp="1645254231525" />
-    <state width="1178" height="252" key="GridCell.Tab.0.center/0.25.1680.947@0.25.1680.947" timestamp="1645247520752" />
+    <state width="1233" height="127" key="GridCell.Tab.0.center/0.25.1680.946@0.25.1680.946" timestamp="1645443210286" />
+    <state width="1233" height="274" key="GridCell.Tab.0.center/0.25.1680.947@0.25.1680.947" timestamp="1645443020086" />
     <state width="1178" height="390" key="GridCell.Tab.0.center/0.25.1680.949@0.25.1680.949" timestamp="1645326958691" />
     <state width="1178" height="261" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1645083727742" />
-    <state width="1178" height="390" key="GridCell.Tab.0.left" timestamp="1645326958691">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state width="1233" height="127" key="GridCell.Tab.0.left" timestamp="1645443210286">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state width="1178" height="231" key="GridCell.Tab.0.left/0.25.1680.946@0.25.1680.946" timestamp="1645254231524" />
-    <state width="1178" height="252" key="GridCell.Tab.0.left/0.25.1680.947@0.25.1680.947" timestamp="1645247520752" />
+    <state width="1233" height="127" key="GridCell.Tab.0.left/0.25.1680.946@0.25.1680.946" timestamp="1645443210286" />
+    <state width="1233" height="274" key="GridCell.Tab.0.left/0.25.1680.947@0.25.1680.947" timestamp="1645443020085" />
     <state width="1178" height="390" key="GridCell.Tab.0.left/0.25.1680.949@0.25.1680.949" timestamp="1645326958691" />
     <state width="1178" height="261" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1645083727741" />
-    <state width="1178" height="390" key="GridCell.Tab.0.right" timestamp="1645326958692">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state width="1233" height="127" key="GridCell.Tab.0.right" timestamp="1645443210286">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state width="1178" height="231" key="GridCell.Tab.0.right/0.25.1680.946@0.25.1680.946" timestamp="1645254231526" />
-    <state width="1178" height="252" key="GridCell.Tab.0.right/0.25.1680.947@0.25.1680.947" timestamp="1645247520753" />
+    <state width="1233" height="127" key="GridCell.Tab.0.right/0.25.1680.946@0.25.1680.946" timestamp="1645443210286" />
+    <state width="1233" height="274" key="GridCell.Tab.0.right/0.25.1680.947@0.25.1680.947" timestamp="1645443020087" />
     <state width="1178" height="390" key="GridCell.Tab.0.right/0.25.1680.949@0.25.1680.949" timestamp="1645326958692" />
     <state width="1178" height="261" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1645083727742" />
-    <state width="1178" height="390" key="GridCell.Tab.1.bottom" timestamp="1645326958696">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state width="1233" height="127" key="GridCell.Tab.1.bottom" timestamp="1645443210288">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state width="1178" height="231" key="GridCell.Tab.1.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645254231529" />
-    <state width="1178" height="252" key="GridCell.Tab.1.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645247520755" />
+    <state width="1233" height="127" key="GridCell.Tab.1.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645443210288" />
+    <state width="1233" height="274" key="GridCell.Tab.1.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645443020094" />
     <state width="1178" height="390" key="GridCell.Tab.1.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645326958696" />
     <state width="1178" height="261" key="GridCell.Tab.1.bottom/0.25.1680.951@0.25.1680.951" timestamp="1645083727747" />
-    <state width="1178" height="390" key="GridCell.Tab.1.center" timestamp="1645326958694">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state width="1233" height="127" key="GridCell.Tab.1.center" timestamp="1645443210287">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state width="1178" height="231" key="GridCell.Tab.1.center/0.25.1680.946@0.25.1680.946" timestamp="1645254231528" />
-    <state width="1178" height="252" key="GridCell.Tab.1.center/0.25.1680.947@0.25.1680.947" timestamp="1645247520754" />
+    <state width="1233" height="127" key="GridCell.Tab.1.center/0.25.1680.946@0.25.1680.946" timestamp="1645443210287" />
+    <state width="1233" height="274" key="GridCell.Tab.1.center/0.25.1680.947@0.25.1680.947" timestamp="1645443020093" />
     <state width="1178" height="390" key="GridCell.Tab.1.center/0.25.1680.949@0.25.1680.949" timestamp="1645326958694" />
     <state width="1178" height="261" key="GridCell.Tab.1.center/0.25.1680.951@0.25.1680.951" timestamp="1645083727744" />
-    <state width="1178" height="390" key="GridCell.Tab.1.left" timestamp="1645326958693">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state width="1233" height="127" key="GridCell.Tab.1.left" timestamp="1645443210287">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state width="1178" height="231" key="GridCell.Tab.1.left/0.25.1680.946@0.25.1680.946" timestamp="1645254231527" />
-    <state width="1178" height="252" key="GridCell.Tab.1.left/0.25.1680.947@0.25.1680.947" timestamp="1645247520753" />
+    <state width="1233" height="127" key="GridCell.Tab.1.left/0.25.1680.946@0.25.1680.946" timestamp="1645443210287" />
+    <state width="1233" height="274" key="GridCell.Tab.1.left/0.25.1680.947@0.25.1680.947" timestamp="1645443020091" />
     <state width="1178" height="390" key="GridCell.Tab.1.left/0.25.1680.949@0.25.1680.949" timestamp="1645326958693" />
     <state width="1178" height="261" key="GridCell.Tab.1.left/0.25.1680.951@0.25.1680.951" timestamp="1645083727743" />
-    <state width="1178" height="390" key="GridCell.Tab.1.right" timestamp="1645326958695">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state width="1233" height="127" key="GridCell.Tab.1.right" timestamp="1645443210288">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state width="1178" height="231" key="GridCell.Tab.1.right/0.25.1680.946@0.25.1680.946" timestamp="1645254231528" />
-    <state width="1178" height="252" key="GridCell.Tab.1.right/0.25.1680.947@0.25.1680.947" timestamp="1645247520754" />
+    <state width="1233" height="127" key="GridCell.Tab.1.right/0.25.1680.946@0.25.1680.946" timestamp="1645443210288" />
+    <state width="1233" height="274" key="GridCell.Tab.1.right/0.25.1680.947@0.25.1680.947" timestamp="1645443020093" />
     <state width="1178" height="390" key="GridCell.Tab.1.right/0.25.1680.949@0.25.1680.949" timestamp="1645326958695" />
     <state width="1178" height="261" key="GridCell.Tab.1.right/0.25.1680.951@0.25.1680.951" timestamp="1645083727747" />
     <state width="1178" height="394" key="GridCell.Tab.2.bottom" timestamp="1644986997751">
@@ -427,9 +455,10 @@
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state x="242" y="235" width="1024" height="469" key="MultipleFileMergeDialog/0.25.1680.951@0.25.1680.951" timestamp="1645326519502" />
-    <state x="407" y="59" key="SettingsEditor" timestamp="1645194066301">
-      <screen x="0" y="25" width="1680" height="947" />
+    <state x="407" y="59" key="SettingsEditor" timestamp="1645426640451">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
+    <state x="407" y="59" key="SettingsEditor/0.25.1680.946@0.25.1680.946" timestamp="1645426640451" />
     <state x="407" y="59" key="SettingsEditor/0.25.1680.947@0.25.1680.947" timestamp="1645194066301" />
     <state x="407" y="59" key="SettingsEditor/0.25.1680.949@0.25.1680.949" timestamp="1640590027076" />
     <state x="441" y="210" key="Vcs.Push.Dialog.v2" timestamp="1645321251171">
@@ -445,24 +474,24 @@
       <screen x="0" y="25" width="1680" height="946" />
     </state>
     <state x="397" y="232" width="922" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1680.946@0.25.1680.946" timestamp="1643279366112" />
-    <state x="568" y="254" width="614" height="490" key="find.popup" timestamp="1645012017081">
-      <screen x="0" y="25" width="1680" height="949" />
+    <state x="568" y="254" width="775" height="490" key="find.popup" timestamp="1645434228491">
+      <screen x="0" y="25" width="1680" height="946" />
     </state>
-    <state x="568" y="254" width="614" height="490" key="find.popup/0.25.1680.946@0.25.1680.946" timestamp="1644375375239" />
+    <state x="568" y="254" width="775" height="490" key="find.popup/0.25.1680.946@0.25.1680.946" timestamp="1645434228491" />
     <state x="568" y="254" width="614" height="490" key="find.popup/0.25.1680.947@0.25.1680.947" timestamp="1645001625743" />
     <state x="568" y="254" width="614" height="490" key="find.popup/0.25.1680.949@0.25.1680.949" timestamp="1645012017081" />
     <state x="238" y="144" key="new project wizard" timestamp="1640406936779">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
     <state x="238" y="144" key="new project wizard/0.25.1680.949@0.25.1680.949" timestamp="1640406936779" />
-    <state x="482" y="219" key="run.anything.popup" timestamp="1639306526883">
+    <state x="482" y="219" key="run.anything.popup" timestamp="1645333038143">
       <screen x="0" y="25" width="1680" height="949" />
     </state>
-    <state x="482" y="219" key="run.anything.popup/0.25.1680.949@0.25.1680.949" timestamp="1639306526883" />
-    <state x="510" y="224" width="670" height="675" key="search.everywhere.popup" timestamp="1642580866605">
+    <state x="482" y="219" key="run.anything.popup/0.25.1680.949@0.25.1680.949" timestamp="1645333038143" />
+    <state x="510" y="224" width="670" height="675" key="search.everywhere.popup" timestamp="1645362657340">
       <screen x="0" y="25" width="1680" height="947" />
     </state>
-    <state x="510" y="224" width="670" height="675" key="search.everywhere.popup/0.25.1680.947@0.25.1680.947" timestamp="1642580866605" />
+    <state x="510" y="224" width="670" height="675" key="search.everywhere.popup/0.25.1680.947@0.25.1680.947" timestamp="1645362657340" />
     <state x="510" y="224" width="670" height="676" key="search.everywhere.popup/0.25.1680.949@0.25.1680.949" timestamp="1640490278659" />
   </component>
   <component name="XDebuggerManager">

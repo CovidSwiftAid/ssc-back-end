@@ -1,12 +1,14 @@
 package com.shu.ssc.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.pagehelper.PageHelper;
 import com.mysql.cj.util.StringUtils;
 import com.shu.ssc.common.result.Result;
 import com.shu.ssc.common.result.ResultCode;
 import com.shu.ssc.dto.ReverseGeocodingDto;
 import com.shu.ssc.dto.SuspectedResultDto;
 import com.shu.ssc.service.RealTimeWeiboService;
+import com.shu.ssc.service.RiskPlaceService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -22,11 +24,14 @@ import javax.annotation.Resource;
 @Slf4j
 @RestController
 @RequestMapping("/api/RealTime")
-@Api(tags = "4-实时微博模块")
+@Api(tags = "3-实时微博模块")
 public class RealTimeWeiboController {
 
     @Resource
     RealTimeWeiboService realTimeWeiboService;
+
+    @Resource
+    RiskPlaceService riskPlaceService;
 
     @GetMapping("/getAllSuspectedLocations")
     @ApiOperation(value = "获取所有疑似地点")
@@ -73,5 +78,23 @@ public class RealTimeWeiboController {
             return Result.failure(ResultCode.PARAM_IS_INVALID);
         }
         return Result.success(result.getAddressComponent());
+    }
+
+    @GetMapping("/getHighRiskPlace")
+    @ApiOperation(value = "获取当前高风险地区信息")
+    @ResponseBody
+    public Result getHighRiskPlace(@RequestParam int pageNum, @RequestParam int pageSize) {
+        log.info("getHighRiskPlace(): 获取当前高风险地区信息, 第" + pageNum + "页，每页大小" + pageSize);
+        PageHelper.startPage(pageNum, pageSize);
+        return Result.success(riskPlaceService.getHighRiskPlace());
+    }
+
+    @GetMapping("/getMediumRiskPlace")
+    @ApiOperation(value = "获取当前中风险地区信息")
+    @ResponseBody
+    public Result getMediumRiskPlace(@RequestParam int pageNum, @RequestParam int pageSize) {
+        log.info("getMediumRiskPlace(): 获取当前中风险地区信息, 第" + pageNum + "页，每页大小" + pageSize);
+        PageHelper.startPage(pageNum, pageSize);
+        return Result.success(riskPlaceService.getMediumRiskPlace());
     }
 }

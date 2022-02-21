@@ -4,9 +4,5 @@
     <file url="file://$PROJECT_DIR$/shu-ssc-api-commons/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shu-ssc-covid/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shu-ssc-covid/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shu-ssc-gateway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shu-ssc-gateway/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shu-ssc-student-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shu-ssc-student-api/src/main/resources" charset="UTF-8" />
   </component>
 </project>

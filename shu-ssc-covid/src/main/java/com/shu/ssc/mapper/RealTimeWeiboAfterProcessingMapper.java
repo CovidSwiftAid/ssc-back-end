@@ -18,9 +18,9 @@ public interface RealTimeWeiboAfterProcessingMapper {
 
     int updateByPrimaryKeySelective(RealTimeWeiboAfterProcessing record);
 
-    int updateByPrimaryKeyWithBLOBs(RealTimeWeiboAfterProcessing record);
-
     int updateByPrimaryKey(RealTimeWeiboAfterProcessing record);
 
     List<RealTimeWeiboAfterProcessing> getAllRealTimeWeiboAfterProcessing();
+
+    RealTimeWeiboAfterProcessing getWeiboByLocationName(String locationName);
 }

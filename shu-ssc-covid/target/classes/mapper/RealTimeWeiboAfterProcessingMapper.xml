@@ -3,23 +3,17 @@
 <mapper namespace="com.shu.ssc.mapper.RealTimeWeiboAfterProcessingMapper">
   <resultMap id="BaseResultMap" type="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="weibo_id" jdbcType="VARCHAR" property="weiboId" />
-    <result column="user_id" jdbcType="VARCHAR" property="userId" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
-    <result column="text" jdbcType="LONGVARCHAR" property="text" />
+    <result column="place" jdbcType="VARCHAR" property="place" />
+    <result column="closed_rate" jdbcType="VARCHAR" property="closedRate" />
+    <result column="positive_rate" jdbcType="VARCHAR" property="positiveRate" />
+    <result column="text" jdbcType="VARCHAR" property="text" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, weibo_id, user_id
+    id, place, closed_rate, positive_rate, text
   </sql>
-  <sql id="Blob_Column_List">
-    text
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from real_time_weibo_after_processing
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -28,10 +22,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
-    insert into real_time_weibo_after_processing (id, weibo_id, user_id, 
-      text)
-    values (#{id,jdbcType=INTEGER}, #{weiboId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
-      #{text,jdbcType=LONGVARCHAR})
+    insert into real_time_weibo_after_processing (id, place, closed_rate, 
+      positive_rate, text)
+    values (#{id,jdbcType=INTEGER}, #{place,jdbcType=VARCHAR}, #{closedRate,jdbcType=VARCHAR}, 
+      #{positiveRate,jdbcType=VARCHAR}, #{text,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
     insert into real_time_weibo_after_processing
@@ -39,11 +33,14 @@
       <if test="id != null">
         id,
       </if>
-      <if test="weiboId != null">
-        weibo_id,
+      <if test="place != null">
+        place,
       </if>
-      <if test="userId != null">
-        user_id,
+      <if test="closedRate != null">
+        closed_rate,
+      </if>
+      <if test="positiveRate != null">
+        positive_rate,
       </if>
       <if test="text != null">
         text,
@@ -53,47 +50,53 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="weiboId != null">
-        #{weiboId,jdbcType=VARCHAR},
+      <if test="place != null">
+        #{place,jdbcType=VARCHAR},
       </if>
-      <if test="userId != null">
-        #{userId,jdbcType=VARCHAR},
+      <if test="closedRate != null">
+        #{closedRate,jdbcType=VARCHAR},
+      </if>
+      <if test="positiveRate != null">
+        #{positiveRate,jdbcType=VARCHAR},
       </if>
       <if test="text != null">
-        #{text,jdbcType=LONGVARCHAR},
+        #{text,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
     update real_time_weibo_after_processing
     <set>
-      <if test="weiboId != null">
-        weibo_id = #{weiboId,jdbcType=VARCHAR},
+      <if test="place != null">
+        place = #{place,jdbcType=VARCHAR},
       </if>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=VARCHAR},
+      <if test="closedRate != null">
+        closed_rate = #{closedRate,jdbcType=VARCHAR},
+      </if>
+      <if test="positiveRate != null">
+        positive_rate = #{positiveRate,jdbcType=VARCHAR},
       </if>
       <if test="text != null">
-        text = #{text,jdbcType=LONGVARCHAR},
+        text = #{text,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
-    update real_time_weibo_after_processing
-    set weibo_id = #{weiboId,jdbcType=VARCHAR},
-      user_id = #{userId,jdbcType=VARCHAR},
-      text = #{text,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
   <update id="updateByPrimaryKey" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
     update real_time_weibo_after_processing
-    set weibo_id = #{weiboId,jdbcType=VARCHAR},
-      user_id = #{userId,jdbcType=VARCHAR}
+    set place = #{place,jdbcType=VARCHAR},
+      closed_rate = #{closedRate,jdbcType=VARCHAR},
+      positive_rate = #{positiveRate,jdbcType=VARCHAR},
+      text = #{text,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-
   <select id="getAllRealTimeWeiboAfterProcessing" resultType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
     select * from real_time_weibo_after_processing
+  </select>
+
+  <select id="getWeiboByLocationName" resultType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
+    select * from real_time_weibo_after_processing
+    where place = #{locationName}
+    limit 1
   </select>
 </mapper>

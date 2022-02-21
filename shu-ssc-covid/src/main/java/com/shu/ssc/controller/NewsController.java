@@ -4,7 +4,6 @@ import com.github.pagehelper.PageHelper;
 import com.shu.ssc.common.result.Result;
 import com.shu.ssc.redis.CovidInfoKeys;
 import com.shu.ssc.service.*;
-import com.shu.ssc.utils.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -26,14 +25,14 @@ public class NewsController {
     @Resource
     ProvinceService provinceService;
 
-    @Resource
-    NewsService newsService;
+//    @Resource
+//    NewsService newsService;
 
     @Resource
     SumdomService sumdomService;
 
-    @Resource
-    WeiboCCTVNewsService weiboCCTVNewsService;
+//    @Resource
+//    WeiboCCTVNewsService weiboCCTVNewsService;
 
     @Resource
     TipsService tipsService;
@@ -52,15 +51,15 @@ public class NewsController {
         return Result.success(provinceService.getAllProvince());
     }
 
-    @GetMapping("/getAllNews")
-    @ApiOperation(value = "获取所有新闻详情")
-//	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
-    @ResponseBody
-    public Result getAllNews(@RequestParam int pageNum, @RequestParam int pageSize) {
-        log.info("getAllNews(): 获取所有新闻详情, 第" + pageNum + "页，每页大小" + pageSize);
-        PageHelper.startPage(pageNum, pageSize);
-        return Result.success(newsService.getAllCovidNews());
-    }
+//    @GetMapping("/getAllNews")
+//    @ApiOperation(value = "获取所有新闻详情")
+////	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+//    @ResponseBody
+//    public Result getAllNews(@RequestParam int pageNum, @RequestParam int pageSize) {
+//        log.info("getAllNews(): 获取所有新闻详情, 第" + pageNum + "页，每页大小" + pageSize);
+//        PageHelper.startPage(pageNum, pageSize);
+//        return Result.success(newsService.getAllCovidNews());
+//    }
 
     @GetMapping("/getAllSumdom")
     @ApiOperation(value = "获取疫情统计信息")
@@ -70,16 +69,16 @@ public class NewsController {
         return Result.success(sumdomService.getAllSumdom());
     }
 
-    @GetMapping("/getWeiboCCTVNews")
-    @ApiOperation(value = "获取央视新闻微博")
-//	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
-    @ResponseBody
-    public Result getWeiboCCTVNews(@RequestParam int pageNum, @RequestParam int pageSize) {
-        log.info("getWeiboCCTVNews(): 获取央视新闻微博, 第" + pageNum + "页，每页大小" + pageSize);
-        PageHelper.startPage(pageNum, pageSize);
-        return Result.success(weiboCCTVNewsService.getAllWeiboCCTVNews());
-//        return Result.success(weiboCCTVNewsService.getAllWeiboCCTVNewsFromRedis());
-    }
+//    @GetMapping("/getWeiboCCTVNews")
+//    @ApiOperation(value = "获取央视新闻微博")
+////	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+//    @ResponseBody
+//    public Result getWeiboCCTVNews(@RequestParam int pageNum, @RequestParam int pageSize) {
+//        log.info("getWeiboCCTVNews(): 获取央视新闻微博, 第" + pageNum + "页，每页大小" + pageSize);
+//        PageHelper.startPage(pageNum, pageSize);
+//        return Result.success(weiboCCTVNewsService.getAllWeiboCCTVNews());
+////        return Result.success(weiboCCTVNewsService.getAllWeiboCCTVNewsFromRedis());
+//    }
 
     @GetMapping("/getOneTips")
     @ApiOperation(value = "随机获取一条防疫贴士")
