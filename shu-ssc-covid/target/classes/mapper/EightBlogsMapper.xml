@@ -254,4 +254,12 @@
     <select id="getAllBlogs" resultType="com.shu.ssc.entity.covid.EightBlogs">
     select * from eight_blogs order by created_at desc
   </select>
+
+  <select id="selectByNumAndLocLimit10" resultType="com.shu.ssc.entity.covid.EightBlogs">
+    select * from eight_blogs where created_at >= now() - interval 3 day and covid_loc like concat('%',#{city,jdbcType=VARCHAR},'%') order by covid_num desc limit 10
+  </select>
+
+  <select id="selectByNumLimit10" resultType="com.shu.ssc.entity.covid.EightBlogs">
+    select * from eight_blogs where created_at >= now() - interval 5 day order by covid_num desc limit 10
+  </select>
 </mapper>

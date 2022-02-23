@@ -88,5 +88,3 @@ mybatis:
   type-aliases-package: com.shu.ssc.entity.covid   # 映射实体类包名，不区分大小写
   configuration:
     map-underscore-to-camel-case: true  # 开启全局的驼峰命名规则
-
-

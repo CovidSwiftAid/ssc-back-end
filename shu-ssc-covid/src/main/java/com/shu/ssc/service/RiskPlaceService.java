@@ -1,5 +1,7 @@
 package com.shu.ssc.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.shu.ssc.common.dto.RiskPlaceDto;
 import com.shu.ssc.entity.covid.RiskPlace;
 
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
  * @description
  */
 public interface RiskPlaceService {
-    List<RiskPlace> getHighRiskPlace();
+    List<RiskPlaceDto> getHighRiskPlace() throws JsonProcessingException;
 
-    List<RiskPlace> getMediumRiskPlace();
+    List<RiskPlaceDto> getMediumRiskPlace() throws JsonProcessingException;
 }

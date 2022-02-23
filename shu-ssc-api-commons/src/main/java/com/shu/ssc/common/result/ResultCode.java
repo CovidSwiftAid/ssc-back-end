@@ -30,7 +30,11 @@ public enum ResultCode {
     LIVE_ADDRESS_NOT_FOUND(6002, "直播地址不存在"),
 
     //      获取经纬度地址错误: 7001-7999
-    FETCH_TRACKS_ERROR(7001, "获取经纬度地址错误");
+    FETCH_TRACKS_ERROR(7001, "获取经纬度地址错误"),
+
+    //      未知错误
+    UNKNOWN_ERROR(8000, "未知错误");
+
 
 
     private Integer code;

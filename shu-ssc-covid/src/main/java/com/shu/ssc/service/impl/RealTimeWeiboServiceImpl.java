@@ -132,6 +132,7 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
 
 //        return finalRes;
         List<String> res = new ArrayList<>();
+        List<String> finalRes = new ArrayList<>();
         for (RealTimeWeiboAfterProcessing wb : trackList) {
             res.add(wb.getPlace());
         }

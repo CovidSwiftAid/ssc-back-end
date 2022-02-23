@@ -86,7 +86,12 @@ public class RealTimeWeiboController {
     public Result getHighRiskPlace(@RequestParam int pageNum, @RequestParam int pageSize) {
         log.info("getHighRiskPlace(): 获取当前高风险地区信息, 第" + pageNum + "页，每页大小" + pageSize);
         PageHelper.startPage(pageNum, pageSize);
-        return Result.success(riskPlaceService.getHighRiskPlace());
+        try {
+            return Result.success(riskPlaceService.getHighRiskPlace());
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return Result.failure(ResultCode.UNKNOWN_ERROR);
+        }
     }
 
     @GetMapping("/getMediumRiskPlace")
@@ -95,7 +100,12 @@ public class RealTimeWeiboController {
     public Result getMediumRiskPlace(@RequestParam int pageNum, @RequestParam int pageSize) {
         log.info("getMediumRiskPlace(): 获取当前中风险地区信息, 第" + pageNum + "页，每页大小" + pageSize);
         PageHelper.startPage(pageNum, pageSize);
-        return Result.success(riskPlaceService.getMediumRiskPlace());
+        try {
+            return Result.success(riskPlaceService.getMediumRiskPlace());
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return Result.failure(ResultCode.UNKNOWN_ERROR);
+        }
     }
 
     @GetMapping("/getRecoEightBlogs")
