@@ -29,4 +29,8 @@ public interface EightBlogsMapper {
     List<EightBlogs> getLatestNthBlog(int n);
 
     List<EightBlogs> getAllBlogs();
+
+    List<EightBlogs> selectByNumAndLocLimit10(String city);
+
+    List<EightBlogs> selectByNumLimit10();
 }

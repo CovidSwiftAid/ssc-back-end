@@ -1,19 +1,20 @@
 package com.shu.ssc.service.impl;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.nacos.common.utils.ConcurrentHashSet;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.shu.ssc.common.dto.RealTimeWeiboDto;
+import com.mysql.cj.util.StringUtils;
 import com.shu.ssc.dto.MapResponseDto;
 import com.shu.ssc.dto.ReverseGeocodingDto;
 import com.shu.ssc.dto.SimpleWeiboDto;
 import com.shu.ssc.dto.SuspectedResultDto;
-import com.shu.ssc.entity.covid.*;
+import com.shu.ssc.entity.covid.EightBlogs;
+import com.shu.ssc.entity.covid.MapResponseEntity;
+import com.shu.ssc.entity.covid.RealTimeWeibo;
+import com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing;
+import com.shu.ssc.mapper.EightBlogsMapper;
 import com.shu.ssc.mapper.RealTimeWeiboAfterProcessingMapper;
 import com.shu.ssc.mapper.RealTimeWeiboFinalMapper;
 import com.shu.ssc.mapper.RealTimeWeiboMapper;
@@ -27,8 +28,6 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.Set;
 
 /**
  * @author oxotn3
@@ -54,6 +53,9 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
 
     @Resource
     RealTimeWeiboMapper realTimeWeiboMapper;
+
+    @Resource
+    EightBlogsMapper eightBlogsMapper;
 
     @Override
     public List<String> getAllSuspectedLocations() {
@@ -220,6 +222,21 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);// 忽略字段大小写
         ReverseGeocodingDto reverseGeocoding = mapper.readValue(re.getBody(), ReverseGeocodingDto.class);
         return reverseGeocoding.getResult();
+    }
+
+    @Override
+    public List<EightBlogs> getRecoEightBlogs(Double lat, Double lng) throws JsonProcessingException {
+        ReverseGeocodingDto.Result reverseGeocoding = getReverseGeocoding(lat, lng);
+        String city = reverseGeocoding.getAddressComponent().getCity().replaceAll("市", "");
+        if (StringUtils.isNullOrEmpty(city)) { //未解析出城市名
+            log.info("RealTimeWeiboServiceImpl getReverseGeocoding: city is empty");
+            return eightBlogsMapper.selectByNumLimit10();
+        }
+        List<EightBlogs> eightBlogs = eightBlogsMapper.selectByNumAndLocLimit10(city);
+        if (eightBlogs == null || eightBlogs.isEmpty()) { //未找到该市的新闻
+            return eightBlogsMapper.selectByNumLimit10();
+        }
+        return eightBlogs;
     }
 
     @Override

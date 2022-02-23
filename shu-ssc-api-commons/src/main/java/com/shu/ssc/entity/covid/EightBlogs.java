@@ -41,6 +41,10 @@ public class EightBlogs {
 
     private String profileUrl;
 
+    private Integer covidNum;
+
+    private String covidLoc;
+
     public String getId() {
         return id;
     }
@@ -175,5 +179,21 @@ public class EightBlogs {
 
     public void setProfileUrl(String profileUrl) {
         this.profileUrl = profileUrl;
+    }
+
+    public Integer getCovidNum() {
+        return covidNum;
+    }
+
+    public void setCovidNum(Integer covidNum) {
+        this.covidNum = covidNum;
+    }
+
+    public String getCovidLoc() {
+        return covidLoc;
+    }
+
+    public void setCovidLoc(String covidLoc) {
+        this.covidLoc = covidLoc;
     }
 }

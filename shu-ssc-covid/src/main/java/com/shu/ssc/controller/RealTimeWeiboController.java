@@ -97,4 +97,11 @@ public class RealTimeWeiboController {
         PageHelper.startPage(pageNum, pageSize);
         return Result.success(riskPlaceService.getMediumRiskPlace());
     }
+
+    @GetMapping("/getRecoEightBlogs")
+    @ApiOperation(value = "推荐微博新闻")
+    @ResponseBody
+    public Result getRecoEightBlogs(@RequestParam("lat") Double lat, @RequestParam("lng") Double lng) throws JsonProcessingException {
+        return Result.success(realTimeWeiboService.getRecoEightBlogs(lat, lng));
+    }
 }
