@@ -64,9 +64,10 @@ public class RiskPlaceServiceImpl implements RiskPlaceService {
         for (RiskPlace place : riskPlaceList) {
             RiskPlaceDto dto = new RiskPlaceDto();
             // https://api.map.baidu.com/geocoding/v3/?address=ADDRESS&output=json&ak=您的ak&callback=showLocation
-            String url = "https://api.map.baidu.com/geocoding/v3/?address=" + place.getAreaName() + "&output=json&ak=" + ak;
+            StringBuilder fullLocationName = new StringBuilder();
+            fullLocationName.append(place.getProvince()).append(place.getCity()).append(place.getCounty()).append(place.getAreaName());
+            String url = "https://api.map.baidu.com/geocoding/v3/?address=" + fullLocationName.toString() + "&output=json&ak=" + ak;
             ResponseEntity<String> re = restTemplate.getForEntity(url, String.class);
-//            System.out.println("====== etForEntity(getUrl, String.class" + re.getBody());
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//忽略未知字段
             mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);// 忽略字段大小写
@@ -76,5 +77,6 @@ public class RiskPlaceServiceImpl implements RiskPlaceService {
             res.add(dto);
         }
         return res;
+
     }
 }

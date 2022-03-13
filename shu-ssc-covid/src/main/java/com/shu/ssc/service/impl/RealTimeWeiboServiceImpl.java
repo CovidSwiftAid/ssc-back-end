@@ -229,6 +229,7 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
     public List<EightBlogs> getRecoEightBlogs(Double lat, Double lng) throws JsonProcessingException {
         ReverseGeocodingDto.Result reverseGeocoding = getReverseGeocoding(lat, lng);
         String city = reverseGeocoding.getAddressComponent().getCity().replaceAll("市", "");
+        log.info("getRecoEightBlogs(): city is {}", city);
         if (StringUtils.isNullOrEmpty(city)) { //未解析出城市名
             log.info("RealTimeWeiboServiceImpl getReverseGeocoding: city is empty");
             return eightBlogsMapper.selectByNumLimit10();
