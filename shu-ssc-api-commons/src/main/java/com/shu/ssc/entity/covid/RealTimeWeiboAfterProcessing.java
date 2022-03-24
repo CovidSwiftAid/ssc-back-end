@@ -12,6 +12,12 @@ public class RealTimeWeiboAfterProcessing {
 
     private String positiveRate;
 
+    private String longitude;
+
+    private String latitude;
+
+    private String level;
+
     private String text;
 
     public Integer getId() {
@@ -44,6 +50,30 @@ public class RealTimeWeiboAfterProcessing {
 
     public void setPositiveRate(String positiveRate) {
         this.positiveRate = positiveRate;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     public String getText() {

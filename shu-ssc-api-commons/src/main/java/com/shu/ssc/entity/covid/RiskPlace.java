@@ -1,5 +1,8 @@
 package com.shu.ssc.entity.covid;
 
+import lombok.Data;
+
+@Data
 public class RiskPlace {
     private Integer id;
 
@@ -14,6 +17,12 @@ public class RiskPlace {
     private String areaName;
 
     private String type;
+
+    private String longitude;
+
+    private String latitude;
+
+    private String level;
 
     public Integer getId() {
         return id;
@@ -69,5 +78,29 @@ public class RiskPlace {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 }

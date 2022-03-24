@@ -6,14 +6,24 @@
     <result column="place" jdbcType="VARCHAR" property="place" />
     <result column="closed_rate" jdbcType="VARCHAR" property="closedRate" />
     <result column="positive_rate" jdbcType="VARCHAR" property="positiveRate" />
-    <result column="text" jdbcType="VARCHAR" property="text" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
+    <result column="text" jdbcType="LONGVARCHAR" property="text" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, place, closed_rate, positive_rate, text
+    id, place, closed_rate, positive_rate, longitude, latitude, level
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+  <sql id="Blob_Column_List">
+    text
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
     <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
     from real_time_weibo_after_processing
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -22,10 +32,12 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
-    insert into real_time_weibo_after_processing (id, place, closed_rate, 
-      positive_rate, text)
-    values (#{id,jdbcType=INTEGER}, #{place,jdbcType=VARCHAR}, #{closedRate,jdbcType=VARCHAR}, 
-      #{positiveRate,jdbcType=VARCHAR}, #{text,jdbcType=VARCHAR})
+    insert into real_time_weibo_after_processing (id, place, closed_rate,
+      positive_rate, longitude, latitude,
+      level, text)
+    values (#{id,jdbcType=INTEGER}, #{place,jdbcType=VARCHAR}, #{closedRate,jdbcType=VARCHAR},
+      #{positiveRate,jdbcType=VARCHAR}, #{longitude,jdbcType=VARCHAR}, #{latitude,jdbcType=VARCHAR},
+      #{level,jdbcType=VARCHAR}, #{text,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
     insert into real_time_weibo_after_processing
@@ -41,6 +53,15 @@
       </if>
       <if test="positiveRate != null">
         positive_rate,
+      </if>
+      <if test="longitude != null">
+        longitude,
+      </if>
+      <if test="latitude != null">
+        latitude,
+      </if>
+      <if test="level != null">
+        level,
       </if>
       <if test="text != null">
         text,
@@ -59,8 +80,17 @@
       <if test="positiveRate != null">
         #{positiveRate,jdbcType=VARCHAR},
       </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
       <if test="text != null">
-        #{text,jdbcType=VARCHAR},
+        #{text,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -76,10 +106,30 @@
       <if test="positiveRate != null">
         positive_rate = #{positiveRate,jdbcType=VARCHAR},
       </if>
+      <if test="longitude != null">
+        longitude = #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null">
+        latitude = #{latitude,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=VARCHAR},
+      </if>
       <if test="text != null">
-        text = #{text,jdbcType=VARCHAR},
+        text = #{text,jdbcType=LONGVARCHAR},
       </if>
     </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
+    update real_time_weibo_after_processing
+    set place = #{place,jdbcType=VARCHAR},
+      closed_rate = #{closedRate,jdbcType=VARCHAR},
+      positive_rate = #{positiveRate,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=VARCHAR},
+      level = #{level,jdbcType=VARCHAR},
+      text = #{text,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
@@ -87,11 +137,18 @@
     set place = #{place,jdbcType=VARCHAR},
       closed_rate = #{closedRate,jdbcType=VARCHAR},
       positive_rate = #{positiveRate,jdbcType=VARCHAR},
-      text = #{text,jdbcType=VARCHAR}
+      longitude = #{longitude,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=VARCHAR},
+      level = #{level,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
   <select id="getAllRealTimeWeiboAfterProcessing" resultType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
     select * from real_time_weibo_after_processing
+  </select>
+
+  <select id="getAllRealTimeWeiboAfterProcessingWithoutText" resultType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">
+    select id, place, closed_rate, positive_rate, longitude, latitude, level from real_time_weibo_after_processing
   </select>
 
   <select id="getWeiboByLocationName" resultType="com.shu.ssc.entity.covid.RealTimeWeiboAfterProcessing">

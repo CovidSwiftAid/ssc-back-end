@@ -18,7 +18,7 @@ import java.util.List;
 public interface RealTimeWeiboService {
     List<String> getAllSuspectedLocations();
 
-    List<MapResponseEntity> getAllSuspectedLocationsInCoordinates() throws JsonProcessingException;
+    List<RealTimeWeiboAfterProcessing> getAllSuspectedLocationsInCoordinates() throws JsonProcessingException;
 
     void saveAllSuspectedLocations() throws JsonProcessingException;
 

@@ -142,25 +142,26 @@ public class RealTimeWeiboServiceImpl implements RealTimeWeiboService {
 
 
     @Override
-    public List<MapResponseEntity> getAllSuspectedLocationsInCoordinates() throws JsonProcessingException {
-        List<MapResponseEntity> res = new ArrayList<>();
-        List<String> tracks = getAllSuspectedLocations();
+    public List<RealTimeWeiboAfterProcessing> getAllSuspectedLocationsInCoordinates() throws JsonProcessingException {
+//        List<MapResponseEntity> res = new ArrayList<>();
+        List<RealTimeWeiboAfterProcessing> trackList = afterProcessingMapper.getAllRealTimeWeiboAfterProcessingWithoutText();
 
-        for (String track : tracks) {
-            // https://api.map.baidu.com/geocoding/v3/?address=ADDRESS&output=json&ak=您的ak&callback=showLocation
-            String url = "https://api.map.baidu.com/geocoding/v3/?address=" + track + "&output=json&ak=" + ak;
-            ResponseEntity<String> re = restTemplate.getForEntity(url, String.class);
-//            System.out.println("====== etForEntity(getUrl, String.class" + re.getBody());
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//忽略未知字段
-            mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);// 忽略字段大小写
-            MapResponseDto response = mapper.readValue(re.getBody(), MapResponseDto.class);
-            MapResponseEntity entity = new MapResponseEntity(response);
-            entity.setLocationName(track);
-            res.add(entity);
-        }
 
-        return res;
+//        for (String track : tracks) {
+//            // https://api.map.baidu.com/geocoding/v3/?address=ADDRESS&output=json&ak=您的ak&callback=showLocation
+//            String url = "https://api.map.baidu.com/geocoding/v3/?address=" + track + "&output=json&ak=" + ak;
+//            ResponseEntity<String> re = restTemplate.getForEntity(url, String.class);
+////            System.out.println("====== etForEntity(getUrl, String.class" + re.getBody());
+//            ObjectMapper mapper = new ObjectMapper();
+//            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//忽略未知字段
+//            mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);// 忽略字段大小写
+//            MapResponseDto response = mapper.readValue(re.getBody(), MapResponseDto.class);
+//            MapResponseEntity entity = new MapResponseEntity(response);
+//            entity.setLocationName(track);
+//            res.add(entity);
+//        }
+
+        return trackList;
     }
 
 

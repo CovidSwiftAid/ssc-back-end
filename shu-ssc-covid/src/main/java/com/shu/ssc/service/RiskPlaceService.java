@@ -12,7 +12,7 @@ import java.util.List;
  * @description
  */
 public interface RiskPlaceService {
-    List<RiskPlaceDto> getHighRiskPlace() throws JsonProcessingException;
+    List<RiskPlace> getHighRiskPlace() throws JsonProcessingException;
 
-    List<RiskPlaceDto> getMediumRiskPlace() throws JsonProcessingException;
+    List<RiskPlace> getMediumRiskPlace() throws JsonProcessingException;
 }

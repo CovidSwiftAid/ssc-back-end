@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * @author oxotn3
@@ -20,6 +21,7 @@ public class SumdomServiceImpl implements SumdomService {
 
     @Override
     public List<Sumdom> getAllSumdom() {
+        PriorityQueue<Double> q = new PriorityQueue<Double>((a, b) -> (int) (b - a));
         return sumdomMapper.getAllSumdom();
     }
 }

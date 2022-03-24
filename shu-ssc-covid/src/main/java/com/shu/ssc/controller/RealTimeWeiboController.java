@@ -83,9 +83,9 @@ public class RealTimeWeiboController {
     @GetMapping("/getHighRiskPlace")
     @ApiOperation(value = "获取当前高风险地区信息")
     @ResponseBody
-    public Result getHighRiskPlace(@RequestParam int pageNum, @RequestParam int pageSize) {
-        log.info("getHighRiskPlace(): 获取当前高风险地区信息, 第" + pageNum + "页，每页大小" + pageSize);
-        PageHelper.startPage(pageNum, pageSize);
+    public Result getHighRiskPlace() {
+        log.info("getHighRiskPlace(): 获取当前高风险地区信息");
+//        PageHelper.startPage(pageNum, pageSize);
         try {
             return Result.success(riskPlaceService.getHighRiskPlace());
         } catch (JsonProcessingException e) {
@@ -97,9 +97,9 @@ public class RealTimeWeiboController {
     @GetMapping("/getMediumRiskPlace")
     @ApiOperation(value = "获取当前中风险地区信息")
     @ResponseBody
-    public Result getMediumRiskPlace(@RequestParam int pageNum, @RequestParam int pageSize) {
-        log.info("getMediumRiskPlace(): 获取当前中风险地区信息, 第" + pageNum + "页，每页大小" + pageSize);
-        PageHelper.startPage(pageNum, pageSize);
+    public Result getMediumRiskPlace() {
+        log.info("getMediumRiskPlace(): 获取当前中风险地区信息");
+//        PageHelper.startPage(pageNum, pageSize);
         try {
             return Result.success(riskPlaceService.getMediumRiskPlace());
         } catch (JsonProcessingException e) {
